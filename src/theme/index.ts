@@ -1,7 +1,10 @@
 import { extendTheme } from '@chakra-ui/react';
 
 const colors = {
-  example: 'tomato',
+  white: '#fff',
+  black: '#484848',
+  gray: '#BCBCBC',
+  orange: '#FFC255',
 };
 const styles = {
   global: {
@@ -10,7 +13,7 @@ const styles = {
     },
     body: {
       color: 'black',
-      fontSize: '1.4rem',
+      fontSize: '1.6rem',
       fontFamily: 'body',
       a: {
         textDecoration: 'none',
@@ -20,15 +23,16 @@ const styles = {
       },
     },
     '::selection': {
-      background: 'tomato',
+      background: 'rgba(129, 214, 238, 0.2)',
     },
     '::-moz-selection': {
-      background: 'tomato',
+      background: 'rgba(129, 214, 238, 0.2)',
     },
   },
 };
 const fonts = {
-  body: "'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif",
+  body: "'游ゴシック体', YuGothic, '游ゴシック', 'Yu Gothic', sans-serif",
+  number: "'Barlow', sans-serif",
 };
 const breakpoints = {
   sm: '500px',
@@ -36,28 +40,49 @@ const breakpoints = {
   lg: '820px',
 };
 const textStyles = {
-  pagenation: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '52px',
-    height: '52px',
-    borderRadius: '9999px',
-    transition: '0.2s background',
-    svg: {
-      width: '40px',
-      height: '40px',
-      color: 'white',
-    },
-    '&:hover': {
-      background: 'secondary',
-    },
+  sectionWidth: {
+    width: '100%',
+    position: 'relative',
+    overflowX: 'clip',
   },
-  bodyWidth: {
-    width: {
-      base: '90vw',
-      sm: '80vw',
-    },
-    mx: 'auto',
+  mainGradation: {
+    background:
+      'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
+  },
+  orangeGradation: {
+    background: 'linear-gradient(90deg, #FFE259 0%, #FFA751 100%)',
+  },
+  textGradation: {
+    background:
+      'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    border: '1px solid #fff',
+    borderImage:
+      'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
+    borderImageSlice: '1',
+  },
+  rainbowCircle: {
+    content: "''",
+    width: '504px',
+    height: '504px',
+    borderRadius: '9999px',
+    background: 'linear-gradient(90deg, #E3FDF5 0%, #FFE6FA 100%)',
+    // opacity: '0.9',
+    filter: 'blur(100px)',
+    position: 'absolute',
+    zIndex: '-1',
+  },
+  orangeCircle: {
+    content: "''",
+    width: '384px',
+    height: '384px',
+    borderRadius: '9999px',
+    background: 'linear-gradient(90deg, #FFC3A0 0%, #FFAFBD 100%)',
+    opacity: '0.3',
+    filter: 'blur(50px)',
+    position: 'absolute',
+    zIndex: '-1',
   },
 };
 
