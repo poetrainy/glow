@@ -68,7 +68,6 @@ const textStyles = {
     height: '504px',
     borderRadius: '9999px',
     background: 'linear-gradient(90deg, #E3FDF5 0%, #FFE6FA 100%)',
-    // opacity: '0.9',
     filter: 'blur(100px)',
     position: 'absolute',
     zIndex: '-1',
