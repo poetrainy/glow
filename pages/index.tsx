@@ -12,6 +12,7 @@ import IndexAccess from '../src/components/IndexAccess';
 import Foot from '../src/components/Foot';
 import { client } from '../src/libs/client';
 import { faqType } from '../src/types/microCms';
+import HeadOgp from '../src/components/HeadOgp';
 
 type Props = {
   indexFaqData: faqType[];
@@ -20,6 +21,7 @@ type Props = {
 const Home: NextPage<Props> = ({ indexFaqData }) => {
   return (
     <>
+      <HeadOgp />
       <OriginalSpacer size="80px" />
       <Navigation index />
       <FirstView />

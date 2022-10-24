@@ -9,6 +9,8 @@ import FaqComponent from '../src/components/Faq';
 import indexContents from '../src/libs/contents';
 import { client } from '../src/libs/client';
 import { faqType } from '../src/types/microCms';
+import HeadOgp from '../src/components/HeadOgp';
+import { path } from '../src/libs/path';
 
 type Props = {
   faqData: faqType[];
@@ -16,16 +18,19 @@ type Props = {
 
 const Faq: NextPage<Props> = ({ faqData }) => {
   return (
-    <Box as="section">
-      <OriginalSpacer size="200px" />
-      <Navigation />
-      <Heading data={indexContents[4]} />
-      <OriginalSpacer size="120px" />
-      <FaqComponent data={faqData} />
-      <OriginalSpacer size="184px" />
-      <Contact />
-      <Foot />
-    </Box>
+    <>
+      <HeadOgp data={path[0]} />
+      <Box as="section">
+        <OriginalSpacer size="200px" />
+        <Navigation />
+        <Heading data={indexContents[4]} />
+        <OriginalSpacer size="120px" />
+        <FaqComponent data={faqData} />
+        <OriginalSpacer size="184px" />
+        <Contact />
+        <Foot />
+      </Box>
+    </>
   );
 };
 

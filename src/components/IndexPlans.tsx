@@ -34,14 +34,8 @@ const IndexStrength: FC = () => {
               <OriginalSpacer size="20px" />
               <Flex textStyle="planCard">
                 <PlanCardHeading data={plans[0][i + 1]} />
-                <Flex alignItems="flex-end" h="6rem">
-                  <Text
-                    as="p"
-                    w="fit-content"
-                    fontSize="6rem"
-                    fontFamily="number"
-                    lineHeight="6rem"
-                  >
+                <Flex alignItems="flex-end" h="6rem" m="16px 0 8px">
+                  <Text as="p" textStyle="planCardPrice">
                     ¥{plans[2][i + 1]}
                   </Text>
                   <Text as="span">/月</Text>
