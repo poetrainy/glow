@@ -22,16 +22,23 @@ const IndexService: FC = () => {
     >
       <Heading data={contents[0]} />
       <OriginalSpacer size="104px" />
-      <Flex justifyContent="center" gap="5%" mx="auto">
+      <Flex justifyContent="center" gap="5%" w="90%" maxW="1200px" mx="auto">
         <Box
-          as="img"
           w="65%"
           maxW="720px"
           h="320px"
           bg="gray"
           boxShadow="120px 64px 0 rgba(0, 0, 0, 0.015)"
-          alt="結婚"
-        />
+        >
+          <Box
+            as="img"
+            src="https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/2a82c36ea580471189d7af9dfb5de439/service.png?w=2000"
+            alt="結婚"
+            w="100%"
+            h="100%"
+            objectFit="cover"
+          />
+        </Box>
         <Box w="30%" mt="80px">
           <Text fontSize="3rem">
             トランスジェンダー専門

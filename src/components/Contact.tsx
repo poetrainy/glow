@@ -5,9 +5,9 @@ import NextLink from 'next/link';
 const Navigation: FC = () => {
   return (
     <Flex
-      as="a"
-      href="https://glow-marriage.com/contact/"
-      target="page"
+      // as="a"
+      // href="https://glow-marriage.com/contact/"
+      // target="page"
       justifyContent="space-between"
       alignItems="center"
       w="100%"

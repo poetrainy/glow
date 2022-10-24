@@ -5,8 +5,13 @@ import OriginalSpacer from './OriginalSpacer';
 import Link from './Link';
 import Faq from './Faq';
 import { Box } from '@chakra-ui/react';
+import { faqType } from '../types/microCms';
 
-const IndexFaq: FC = () => {
+type Props = {
+  data: faqType[];
+};
+
+const IndexFaq: FC<Props> = ({ data }) => {
   return (
     <Box
       as="section"
@@ -24,12 +29,9 @@ const IndexFaq: FC = () => {
     >
       <Heading data={contents[4]} />
       <OriginalSpacer size="104px" />
-      <Faq />
+      <Faq data={data} />
       <OriginalSpacer size="64px" />
       <Link text="よくある質問一覧" url="/faq" />
-      {/* <NextLink href="/faq" passHref>
-        <Link text="よくある質問一覧" />
-      </NextLink> */}
     </Box>
   );
 };

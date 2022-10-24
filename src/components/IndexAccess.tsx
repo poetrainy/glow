@@ -19,7 +19,6 @@ const IndexService: FC = () => {
       <Heading data={contents[5]} />
       <OriginalSpacer size="104px" />
       <Flex
-        as="ul"
         justifyContent="space-between"
         w="80vw"
         maxW="1000px"

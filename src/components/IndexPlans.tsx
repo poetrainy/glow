@@ -5,6 +5,8 @@ import { indexPlans, plans } from '../libs/plans';
 import Heading from './Heading';
 import OriginalSpacer from './OriginalSpacer';
 import Link from './Link';
+import PlanCardCopy from './PlanCardCopy';
+import PlanCardHeading from './PlanCardHeading';
 
 const IndexStrength: FC = () => {
   return (
@@ -28,33 +30,22 @@ const IndexStrength: FC = () => {
               w="calc((100% - 5% * 2) / 3)"
               key={i}
             >
-              <Flex
-                justifyContent="center"
-                alignItems="center"
-                h="40px"
-                color="white"
-                p="0 24px"
-                textStyle="mainGradation"
-                boxShadow="0px 3px 16px rgba(0, 0, 0, 0.07)"
-              >
-                {item.copy}
-              </Flex>
-              <OriginalSpacer size="24px" />
-              <Flex
-                alignItems="center"
-                flexDirection="column"
-                w="100%"
-                p="40px 32px"
-                boxShadow="0px 3px 16px rgba(0, 0, 0, 0.07)"
-                borderRadius="16px"
-              >
-                <Text fontSize="2rem">{plans[0][i + 1]}</Text>
-                <Text>
-                  <Text as="span" fontSize="6rem" fontFamily="number">
+              <PlanCardCopy data={item.copy} />
+              <OriginalSpacer size="20px" />
+              <Flex textStyle="planCard">
+                <PlanCardHeading data={plans[0][i + 1]} />
+                <Flex alignItems="flex-end" h="6rem">
+                  <Text
+                    as="p"
+                    w="fit-content"
+                    fontSize="6rem"
+                    fontFamily="number"
+                    lineHeight="6rem"
+                  >
                     ¥{plans[2][i + 1]}
                   </Text>
                   <Text as="span">/月</Text>
-                </Text>
+                </Flex>
                 <Text fontSize="2.5rem">＋</Text>
                 <Text fontSize="1.2rem" lineHeight="1.2rem">
                   初期費用

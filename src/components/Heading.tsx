@@ -24,7 +24,9 @@ const Heading: FC<Props> = ({ data }) => {
         },
       }}
     >
-      <Text fontSize="3rem">{data.title}</Text>
+      <Text as="h2" fontSize="3rem">
+        {data.title}
+      </Text>
       <Box
         as={data.svg}
         sx={{

@@ -39,7 +39,7 @@ const Foot: FC = () => {
         {sns.map((item, i) => (
           <Box as="li" key={i}>
             <Box as="a" href={item.url}>
-              <Box as={item.icon} w="32px" h="32px" />
+              <Text as={item.icon} w="32px" h="32px" />
             </Box>
           </Box>
         ))}

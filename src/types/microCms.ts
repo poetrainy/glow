@@ -1,8 +1,9 @@
-export type microCms = {
-  // microCMSのデータとか引っ張ってくる時のため
-  // endpointごとにつくる
+export type faqType = {
+  id: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
+  question: string;
+  answer: string;
 };

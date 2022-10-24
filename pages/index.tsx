@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Navigation from '../src/components/Navigation';
-import FirstView from '../src/components/FirstView';
+import FirstView from '../src/components/IndexFirstView';
 import OriginalSpacer from '../src/components/OriginalSpacer';
 import IndexService from '../src/components/IndexService';
 import IndexStrength from '../src/components/IndexStrength';
@@ -10,12 +10,18 @@ import Contact from '../src/components/Contact';
 import IndexFaq from '../src/components/IndexFaq';
 import IndexAccess from '../src/components/IndexAccess';
 import Foot from '../src/components/Foot';
+import { client } from '../src/libs/client';
+import { faqType } from '../src/types/microCms';
 
-const Home: NextPage = () => {
+type Props = {
+  indexFaqData: faqType[];
+};
+
+const Home: NextPage<Props> = ({ indexFaqData }) => {
   return (
     <>
       <OriginalSpacer size="80px" />
-      <Navigation />
+      <Navigation index />
       <FirstView />
       <OriginalSpacer size="184px" />
       <IndexService />
@@ -28,7 +34,7 @@ const Home: NextPage = () => {
       <OriginalSpacer size="184px" />
       <Contact />
       <OriginalSpacer size="184px" />
-      <IndexFaq />
+      <IndexFaq data={indexFaqData} />
       <OriginalSpacer size="184px" />
       <IndexAccess />
       <OriginalSpacer size="184px" />
@@ -40,18 +46,24 @@ const Home: NextPage = () => {
 
 export default Home;
 
-// export const getStaticProps = async () => {
-//   const microCMSData = await client.get({
-//     endpoint: 'endpoint名',
-//     // queries: {
-//     //   offset: 0,
-//     //   limit: 100,
-//     // },
-//   });
+export const getStaticProps = async () => {
+  const microCMSData = await client.get({
+    endpoint: 'faq',
+    queries: {
+      offset: 0,
+      limit: 100,
+    },
+  });
+  const data = microCMSData.contents.reverse();
+  const indexFaq = [];
 
-//   return {
-//     props: {
-//       data: microCMSData.contents,
-//     },
-//   };
-// };
+  for (let i = 0; i < 3; i++) {
+    indexFaq.push(data[i]);
+  }
+
+  return {
+    props: {
+      indexFaqData: indexFaq,
+    },
+  };
+};

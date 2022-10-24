@@ -1,4 +1,4 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { FC, useEffect, useState } from 'react';
 import Allow from './Allow';
 
@@ -10,14 +10,23 @@ const FirstView: FC = () => {
 
   return (
     <>
-      <Flex w="100%" h={`calc(${windowHeight}px - 80px * 2)`} bg="black"></Flex>
+      <Flex w="100%" h={`calc(${windowHeight}px - 80px * 2)`} bg="black">
+        <Box
+          as="img"
+          src="https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/3ee965d5d96d4ef69794c484e0c285db/fv.png?w=2000"
+          alt="GLOW結婚相談所"
+          w="100%"
+          h="100%"
+          objectFit="cover"
+        />
+      </Flex>
       <Flex
         justifyContent="center"
         alignItems="center"
         w="100%"
         h="80px"
         color="gray"
-        pt="24px"
+        // pt="24px"
         pos="relative"
       >
         <Allow gray />

@@ -1,6 +1,6 @@
-import { indexPlansType } from './../types/plans';
+import { indexPlansType, conditionsType, optionType } from './../types/plans';
 
-export const indexPlans: indexPlansType = [
+export const indexPlans: indexPlansType[] = [
   {
     copy: '20代限定',
     plan: 'light',
@@ -26,6 +26,55 @@ export const plans: string[][] = [
   ['対面面談', '適時', '適時', '月1回'],
   ['申込人数', '20人', '20人', '40人'],
 ];
+
+export const option: optionType[] = [
+  {
+    copy: '初月無料！',
+    title: 'AIマッチング',
+    price: '3,500',
+    priceNotes: '（各プランあり）',
+    text: '会員の趣味や嗜好、活動履歴などあらゆるデータをAIが分析。条件検索だけでは見つからない、相性の良いお相手をご紹介します。',
+    textNotes:
+      '※会員様がアクティブに活動すればするほど、ご紹介の精度が上がります。',
+  },
+  {
+    title: '会員情報更新',
+    price: '5,000',
+    text: 'お見合いが組めない場合など、会員情報の更新を適時ご案内いたします。プロフィール写真更新の場合、写真撮影費が別途かかります。',
+  },
+  {
+    title: '写真撮影',
+    price: '15,000',
+    text: 'プロのカメラマンが撮影＆修正した写真で、100％お見合いの組める理想的なプロフィールに。ご希望があれば同行いたします。',
+    textNotes: '※フォトスタジオに直接お支払いいただく料金となります。',
+  },
+];
+
+export const conditions: conditionsType[] = [
+  {
+    title: '入会条件',
+    list: [
+      '22歳以上の方',
+      '被保佐人、被後見人でない方',
+      '男性の場合、安定した収入がある方',
+      `法律上の独身ならびに同棲関係を含む、
+事実上の婚姻関係のない方`,
+    ],
+  },
+  {
+    title: '必要書類',
+    list: [
+      '独身証明書（3ヶ月以内の原本）',
+      '写真付身分証明書（免許証・パスポート等／コピー可）',
+      '最終学歴が短大卒以上の方のみ学歴証明書（コピー可）',
+      '収入証明書（給与明細・源泉徴収票・確定申告書／コピー可）',
+      '医師・弁護士、その他の国家資格それに準ずる資格をお持ちの方はその証明書（コピー可）',
+      `3ヶ月以内のフォトスタジオでの写真2枚以上 
+（ご希望の方には、フォトスタジオをご紹介致します。）`,
+    ],
+  },
+];
+
 // export const plans: plansType = [
 //   {
 //     '',
