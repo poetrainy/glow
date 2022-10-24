@@ -35,9 +35,9 @@ const fonts = {
   number: "'Barlow', sans-serif",
 };
 const breakpoints = {
-  sm: '500px',
-  md: '640px',
-  lg: '820px',
+  sm: '880px',
+  // md: '640px',
+  // lg: '880px',
 };
 const textStyles = {
   sectionWidth: {

@@ -29,14 +29,18 @@ const plansPage: NextPage = () => {
   return (
     <>
       <HeadOgp data={path[1]} />
-      <Box>
-        <OriginalSpacer size="200px" />
-        <Navigation />
-        <Heading data={indexContents[3]} />
-        <OriginalSpacer size="120px" />
-        <Box as="table" w="80vw" maxW="1000px" mx="auto">
+      <Navigation />
+      <OriginalSpacer size="200px" />
+      <Heading data={indexContents[3]} />
+      <OriginalSpacer size="120px" />
+      <Box as="section">
+        <Text as="h2" w="fit-content" mx="auto" fontSize="2.4rem">
+          プラン詳細
+        </Text>
+        <OriginalSpacer size="64px" />
+        <Box as="table" w="80vw" maxW="1000px" minW="760px" mx="auto">
           <Box as="tbody">
-            {plans.map((item: any, i: number) => (
+            {plans.map((item: string[], i: number) => (
               <Box
                 as="tr"
                 key={i}
@@ -54,7 +58,7 @@ const plansPage: NextPage = () => {
                   ...(i !== 0 && i % 2 === 0 ? { background: '#F7FAFC' } : {}),
                 }}
               >
-                {item.map((td: any, i2: number) => (
+                {item.map((td: string, i2: number) => (
                   <Box
                     as="td"
                     key={i2}
@@ -72,6 +76,13 @@ const plansPage: NextPage = () => {
             ))}
           </Box>
         </Box>
+      </Box>
+      <OriginalSpacer size="120px" />
+      <Box as="section">
+        <Text as="h2" w="fit-content" mx="auto" fontSize="2.4rem">
+          追加オプション
+        </Text>
+        <OriginalSpacer size="64px" />
         <Flex
           as="ul"
           justifyContent="space-between"
@@ -113,14 +124,6 @@ const plansPage: NextPage = () => {
                   </Box>
                 ))}
               </Flex>
-              {/* <Text fontSize="1.5rem" lineHeight="2.8rem" m="16px 0 0">
-              {item.text}
-            </Text>
-            {item.priceNotes !== undefined && (
-              <Text fontSize="1.3rem" m="8px 0 0">
-                {item.textNotes}
-              </Text>
-            )} */}
             </Flex>
           </Flex>
           {option.map((item, i) => {
@@ -167,34 +170,34 @@ const plansPage: NextPage = () => {
             );
           })}
         </Flex>
-        {conditions.map((item: any, i: number) => (
-          <Box as="section" key={i} w="fit-content" m="120px auto 0">
-            <Text as="h2" w="fit-content" mx="auto" fontSize="2.4rem">
-              {item.title}
-            </Text>
-            <OriginalSpacer size="64px" />
-            <Flex
-              flexDirection="column"
-              as="ul"
-              gap="20px"
-              w="fit-content"
-              bg="white"
-              p="64px 80px"
-              boxShadow="0px 3px 16px rgba(0, 0, 0, 0.05)"
-              borderRadius="8px"
-            >
-              {item.list.map((list: any, i2: number) => (
-                <Box as="li" key={i2} fontSize="1.8rem">
-                  {list}
-                </Box>
-              ))}
-            </Flex>
-          </Box>
-        ))}
-        <OriginalSpacer size="184px" />
-        <Contact />
-        <Foot />
       </Box>
+      {conditions.map((item: any, i: number) => (
+        <Box as="section" key={i} w="fit-content" m="120px auto 0">
+          <Text as="h2" w="fit-content" mx="auto" fontSize="2.4rem">
+            {item.title}
+          </Text>
+          <OriginalSpacer size="64px" />
+          <Flex
+            flexDirection="column"
+            as="ul"
+            gap="20px"
+            w="fit-content"
+            bg="white"
+            p="64px 80px"
+            boxShadow="0px 3px 16px rgba(0, 0, 0, 0.05)"
+            borderRadius="8px"
+          >
+            {item.list.map((list: any, i2: number) => (
+              <Box as="li" key={i2} fontSize="1.8rem">
+                {list}
+              </Box>
+            ))}
+          </Flex>
+        </Box>
+      ))}
+      <OriginalSpacer size="184px" />
+      <Contact />
+      <Foot />
     </>
   );
 };

@@ -12,9 +12,14 @@ const Faq: FC<Props> = ({ data }) => {
       as="ul"
       flexDirection="column"
       gap="48px"
-      w="80vw"
       maxW="960px"
       mx="auto"
+      sx={{
+        width: {
+          base: '90vw',
+          sm: '80vw',
+        },
+      }}
     >
       {data.map((item, i) => (
         <Flex as="li" flexDirection="column" gap="16px" key={i}>
