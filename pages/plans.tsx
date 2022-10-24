@@ -38,42 +38,46 @@ const plansPage: NextPage = () => {
           プラン詳細
         </Text>
         <OriginalSpacer size="64px" />
-        <Box as="table" w="80vw" maxW="1000px" minW="760px" mx="auto">
-          <Box as="tbody">
-            {plans.map((item: string[], i: number) => (
-              <Box
-                as="tr"
-                key={i}
-                sx={{
-                  ...(i === 0
-                    ? {
-                        height: '56px',
-                        color: 'white',
-                        background:
-                          'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
-                        fontSize: '2rem',
-                        fontWeight: 'bold',
-                      }
-                    : { height: '72px' }),
-                  ...(i !== 0 && i % 2 === 0 ? { background: '#F7FAFC' } : {}),
-                }}
-              >
-                {item.map((td: string, i2: number) => (
-                  <Box
-                    as="td"
-                    key={i2}
-                    textAlign="center"
-                    sx={{
-                      ...(i2 === 0
-                        ? { width: '22%', fontWeight: 'bold' }
-                        : { width: '26%' }),
-                    }}
-                  >
-                    {td}
-                  </Box>
-                ))}
-              </Box>
-            ))}
+        <Box w="100%" p="0 5%" overflow="scroll">
+          <Box as="table" w="80vw" maxW="1000px" minW="800px" mx="auto">
+            <Box as="tbody">
+              {plans.map((item: string[], i: number) => (
+                <Box
+                  as="tr"
+                  key={i}
+                  sx={{
+                    ...(i === 0
+                      ? {
+                          height: '56px',
+                          color: 'white',
+                          background:
+                            'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
+                          fontSize: '2rem',
+                          fontWeight: 'bold',
+                        }
+                      : { height: '72px' }),
+                    ...(i !== 0 && i % 2 === 0
+                      ? { background: '#F7FAFC' }
+                      : {}),
+                  }}
+                >
+                  {item.map((td: string, i2: number) => (
+                    <Box
+                      as="td"
+                      key={i2}
+                      textAlign="center"
+                      sx={{
+                        ...(i2 === 0
+                          ? { width: '22%', fontWeight: 'bold' }
+                          : { width: '26%' }),
+                      }}
+                    >
+                      {td}
+                    </Box>
+                  ))}
+                </Box>
+              ))}
+            </Box>
           </Box>
         </Box>
       </Box>
@@ -86,20 +90,22 @@ const plansPage: NextPage = () => {
         <Flex
           as="ul"
           justifyContent="space-between"
-          gap="10%"
+          gap="64px"
           flexWrap="wrap"
-          w="75vw"
           maxW="1000px"
           mx="auto"
+          sx={{
+            justifyContent: {
+              base: 'center',
+              md: 'space-between',
+            },
+            width: {
+              base: '90vw',
+              sm: '75vw',
+            },
+          }}
         >
-          <Flex
-            as="li"
-            alignItems="center"
-            flexDirection="column"
-            w="calc((100% - 10% * 1) / 2)"
-            minW="320px"
-            m="64px 0 0"
-          >
+          <Flex as="li" textStyle="planCardWrap">
             <Flex textStyle="planCard">
               <PlanCardHeading data="恋愛・婚活相談" />
               <Text
@@ -113,9 +119,28 @@ const plansPage: NextPage = () => {
                   無料
                 </Text>
               </Text>
-              <Flex gap="5%">
+              <Flex
+                gap="5%"
+                m="0 auto 0 0"
+                fontSize="1.5rem"
+                lineHeight="2.8rem"
+                sx={{
+                  flexWrap: {
+                    base: 'wrap',
+                    lg: 'nowrap',
+                  },
+                }}
+              >
                 {consultation.map((item: any, i: number) => (
-                  <Box key={i} w="calc((100% - 5%) / 2)">
+                  <Box
+                    key={i}
+                    sx={{
+                      width: {
+                        base: '100%',
+                        lg: 'calc((100% - 5%) / 2)',
+                      },
+                    }}
+                  >
                     <Text>{item.target}</Text>
                     <Box>
                       <Text as="span">{item.time}</Text>
@@ -128,13 +153,7 @@ const plansPage: NextPage = () => {
           </Flex>
           {option.map((item, i) => {
             return (
-              <Flex
-                as="li"
-                alignItems="center"
-                flexDirection="column"
-                w="calc((100% - 10% * 1) / 2)"
-                key={i}
-              >
+              <Flex as="li" textStyle="planCardWrap" key={i}>
                 {item.copy !== undefined && (
                   <>
                     <PlanCardCopy data={item.copy} />
@@ -181,14 +200,26 @@ const plansPage: NextPage = () => {
             flexDirection="column"
             as="ul"
             gap="20px"
-            w="fit-content"
             bg="white"
-            p="64px 80px"
             boxShadow="0px 3px 16px rgba(0, 0, 0, 0.05)"
             borderRadius="8px"
+            sx={{
+              width: {
+                base: '90vw',
+                sm: 'fit-content',
+              },
+              padding: {
+                base: '40px 24px',
+                sm: '64px 80px',
+              },
+              fontSize: {
+                base: '1.6rem',
+                sm: '1.8rem',
+              },
+            }}
           >
             {item.list.map((list: any, i2: number) => (
-              <Box as="li" key={i2} fontSize="1.8rem">
+              <Box as="li" key={i2}>
                 {list}
               </Box>
             ))}

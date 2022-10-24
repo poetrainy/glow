@@ -27,7 +27,6 @@ const IndexFlow: FC = () => {
       <Flex
         as="ul"
         justifyContent="center"
-        // gap="64px 0"
         flexWrap="wrap"
         w="85vw"
         maxW="1200px"

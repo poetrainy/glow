@@ -61,7 +61,6 @@ const Link: FC<Props> = ({ text, url }) => {
         transition="inset 0.2s"
         overflow="hidden"
         pos="absolute"
-        // pos="relative"
         inset="auto -64px auto auto"
         sx={{
           '&::before': {

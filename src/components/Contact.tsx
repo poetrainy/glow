@@ -37,7 +37,7 @@ const Navigation: FC = () => {
             background: 'white',
             inset: {
               base: 'auto',
-              sm: 'auto -128px auto auto',
+              md: 'auto -128px auto auto',
             },
             '>div': {
               background: '#FCB6BE',
@@ -54,15 +54,15 @@ const Navigation: FC = () => {
       sx={{
         flexDirection: {
           base: 'column',
-          sm: 'row',
+          md: 'row',
         },
         flexWrap: {
           base: 'wrap',
-          sm: 'nowrap',
+          md: 'nowrap',
         },
         padding: {
           base: '32px 0',
-          sm: '24px 80px',
+          md: '24px 80px',
         },
       }}
     >
@@ -72,7 +72,7 @@ const Navigation: FC = () => {
           sx={{
             textAlign: {
               base: 'center',
-              sm: 'left',
+              md: 'left',
             },
             ...(windowWidth < 1080 && { width: 'calc(3.2rem * 10)' }),
           }}
@@ -84,7 +84,7 @@ const Navigation: FC = () => {
           sx={{
             alignItems: {
               base: 'center',
-              sm: 'flex-start',
+              md: 'flex-start',
             },
           }}
         >
@@ -128,11 +128,11 @@ const Navigation: FC = () => {
         sx={{
           transform: {
             base: '0',
-            sm: 'translateX(-96px)',
+            md: 'translateX(-96px)',
           },
           margin: {
             base: '64px 0 0',
-            sm: '0',
+            md: '0',
           },
         }}
       >
@@ -151,15 +151,15 @@ const Navigation: FC = () => {
           sx={{
             margin: {
               base: '16px 0 0',
-              sm: '0e',
+              md: '0e',
             },
             position: {
               base: 'relative',
-              sm: 'absolute',
+              md: 'absolute',
             },
             inset: {
               base: 'auto',
-              sm: 'auto -114px auto auto',
+              md: 'auto -114px auto auto',
             },
           }}
         >

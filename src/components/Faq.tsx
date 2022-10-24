@@ -17,7 +17,7 @@ const Faq: FC<Props> = ({ data }) => {
       sx={{
         width: {
           base: '90vw',
-          sm: '80vw',
+          md: '80vw',
         },
       }}
     >

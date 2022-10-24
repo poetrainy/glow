@@ -26,7 +26,6 @@ const FirstView: FC = () => {
         w="100%"
         h="80px"
         color="gray"
-        // pt="24px"
         pos="relative"
       >
         <Allow gray />

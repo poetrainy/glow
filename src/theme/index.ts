@@ -35,9 +35,9 @@ const fonts = {
   number: "'Barlow', sans-serif",
 };
 const breakpoints = {
-  sm: '880px',
-  // md: '640px',
-  // lg: '880px',
+  sm: '640px',
+  md: '880px',
+  lg: '1000px',
 };
 const textStyles = {
   sectionWidth: {
@@ -92,10 +92,20 @@ const textStyles = {
     borderRadius: '16px',
   },
   planCardPrice: {
-    w: 'fit-content',
+    width: 'fit-content',
     fontSize: '6rem',
     fontFamily: 'number',
     lineHeight: '6rem',
+  },
+  planCardWrap: {
+    width: {
+      base: '100%',
+      sm: '80%',
+      md: 'calc((100% - 10% * 1) / 2)',
+    },
+    alignItems: 'center',
+    flexDirection: 'column',
+    minW: '296px',
   },
 };
 
