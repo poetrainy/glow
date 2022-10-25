@@ -61,7 +61,6 @@ const IndexFlow: FC = () => {
                 fontSize="2rem"
                 pos="absolute"
                 inset="auto"
-                zIndex="2"
                 textStyle="borderGradation"
                 sx={{
                   '&::before': {
@@ -69,12 +68,16 @@ const IndexFlow: FC = () => {
                     display: 'block',
                     width: '100%',
                     height: '100%',
+                    background: 'white',
                     position: 'absolute',
                     inset: '0 0 auto auto',
+                    // zIndex: '3',
                   },
                 }}
               >
-                0{i + 1}
+                <Text zIndex="5" textStyle="textGradation">
+                  0{i + 1}
+                </Text>
               </Flex>
               <Flex
                 w="100%"

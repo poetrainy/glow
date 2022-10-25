@@ -11,6 +11,7 @@ import PlanCardCopy from '../src/components/PlanCardCopy';
 import PlanCardHeading from '../src/components/PlanCardHeading';
 import HeadOgp from '../src/components/HeadOgp';
 import { path } from '../src/libs/path';
+import check from '../src/assets/icon_check';
 
 const consultation = [
   {
@@ -107,6 +108,7 @@ const plansPage: NextPage = () => {
         >
           <Flex
             as="li"
+            w="100%"
             textStyle="planCardWrap"
             sx={{
               margin: {
@@ -115,21 +117,25 @@ const plansPage: NextPage = () => {
               },
             }}
           >
-            <Flex p="40px 32px" textStyle="planCard">
+            <Flex
+              w="100%"
+              textStyle="planCard"
+              sx={{
+                padding: {
+                  base: '80px 40px',
+                  lg: '80px 32px',
+                },
+              }}
+            >
               <PlanCardHeading data="恋愛・婚活相談" />
-              <Text
-                w="fit-content"
-                fontSize="4rem"
-                lineHeight="6rem"
-                m="16px 0 8px"
-              >
+              <Text fontSize="4rem" lineHeight="6rem" m="16px 0 16px">
                 <Text as="span">会員様</Text>
                 <Text as="span" textStyle="textGradation">
                   無料
                 </Text>
               </Text>
               <Flex
-                gap="5%"
+                w="100%"
                 m="0 auto 0 0"
                 fontSize="1.5rem"
                 lineHeight="2.8rem"
@@ -137,6 +143,10 @@ const plansPage: NextPage = () => {
                   flexWrap: {
                     base: 'wrap',
                     lg: 'nowrap',
+                  },
+                  gap: {
+                    base: '8px 0',
+                    lg: '5%',
                   },
                 }}
               >
@@ -215,22 +225,20 @@ const plansPage: NextPage = () => {
             sx={{
               width: {
                 base: '90vw',
-                sm: 'fit-content',
+                md: '70vw',
+                lg: '50vw',
               },
               padding: {
                 base: '40px 24px',
                 sm: '64px 80px',
               },
-              fontSize: {
-                base: '1.6rem',
-                sm: '1.8rem',
-              },
             }}
           >
             {item.list.map((list: any, i2: number) => (
-              <Box as="li" key={i2}>
-                {list}
-              </Box>
+              <Flex as="li" key={i2} gap="8px">
+                <Box as={check} w="20px" m="4px 0 0" />
+                <Text w="calc(100% - 20px)" lineHeight="3rem">{list}</Text>
+              </Flex>
             ))}
           </Flex>
         </Box>

@@ -1,24 +1,33 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
-import { FC } from 'react';
+import { Flex, Text } from '@chakra-ui/react';
+import { FC, useEffect, useState } from 'react';
 import Allow from './Allow';
 import { useWindowSize } from 'react-use';
+import OriginalSpacer from './OriginalSpacer';
 
 const IndexFirstView: FC = () => {
   const { width, height } = useWindowSize();
-
-  console.log(height);
+  const [windowHeight, setWindowHeight] = useState<number>(0);
+  useEffect(() => {
+    setWindowHeight(height);
+  }, []);
 
   return (
     <>
       <Flex
+        flexDirection="column"
         w="100%"
-        h={`calc(${height}px - 80px * 2)`}
+        h={`calc(${windowHeight}px - 80px * 2)`}
+        color="white"
         bg="url(https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/3ee965d5d96d4ef69794c484e0c285db/fv.png?w=2000)"
         bgRepeat="no-repeat"
         bgSize="cover"
+        p="40px 24px"
       >
-        <Text>テキストが入ります。</Text>
-        <Text>
+        <Text as="h2" fontSize="5rem">
+          テキストが入ります。
+        </Text>
+        <OriginalSpacer size="8px" />
+        <Text fontSize="2.5rem">
           トランスジェンダー専門
           <br />
           結婚相談サービス

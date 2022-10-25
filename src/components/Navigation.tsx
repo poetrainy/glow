@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import indexContents from '../libs/contents';
 // @ts-ignore
 import { Link as Scroll } from 'react-scroll';
@@ -11,8 +11,11 @@ type Props = {
 };
 
 const Navigation: FC<Props> = ({ index }) => {
-
   const { width, height } = useWindowSize();
+  const [windowWidth, setWindowWidth] = useState<number>(0);
+  useEffect(() => {
+    setWindowWidth(width);
+  }, []);
 
   return (
     <Flex
@@ -68,8 +71,11 @@ const Navigation: FC<Props> = ({ index }) => {
           //   ))}
           // </Flex>
           <>
-            {width < 1080 && (
-              <Box as="button" order="2">
+            {windowWidth < 1080 && (
+              <Box
+                // as="button"
+                order="2"
+              >
                 <Box
                   as="span"
                   display="block"
@@ -99,6 +105,8 @@ const Navigation: FC<Props> = ({ index }) => {
                   }}
                 />
                 <Text
+                  as="span"
+                  display="block"
                   fontFamily="number"
                   fontSize="1.4rem"
                   transform="translateY(12px)"
