@@ -16,19 +16,28 @@ const IndexStrength: FC = () => {
       <Flex
         as="ul"
         justifyContent="space-between"
-        gap="24px"
-        flexWrap="wrap"
+        // gap="24px"
         w="80vw"
         maxW="1080px"
         mx="auto"
+        sx={{
+          flexWrap: {
+            base: 'wrap',
+            lg: 'nowrap',
+          },
+          gap: {
+            base: '40px 0',
+            lg: '24px',
+          },
+        }}
       >
         {indexPlans.map((item, i) => {
           return (
             <Flex
               as="li"
               key={i}
-              alignItems="center"
               flexDirection="column"
+              alignItems="center"
               sx={{
                 width: {
                   base: '100%',
@@ -38,7 +47,20 @@ const IndexStrength: FC = () => {
             >
               <PlanCardCopy data={item.copy} />
               <OriginalSpacer size="20px" />
-              <Flex textStyle="planCard">
+              <Flex
+                textStyle="planCard"
+                sx={{
+                  width: {
+                    base: '100%',
+                    sm: '60%',
+                    lg: '100%',
+                  },
+                  padding: {
+                    base: '40px 32px',
+                    lg: '40px 0',
+                  },
+                }}
+              >
                 <PlanCardHeading data={plans[0][i + 1]} />
                 <Flex alignItems="flex-end" h="6rem" m="16px 0 8px">
                   <Text as="p" textStyle="planCardPrice">

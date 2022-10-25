@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import indexContents from '../libs/contents';
 // @ts-ignore
 import { Link as Scroll } from 'react-scroll';
@@ -11,15 +11,6 @@ type Props = {
 };
 
 const Navigation: FC<Props> = ({ index }) => {
-  // const [windowWidth, setWindowWidth] = useState<number>(0);
-
-  // useEffect(() => {
-  //   const onResize = () => {
-  //     setWindowWidth(window.innerWidth);
-  //   };
-  //   window.addEventListener('resize', onResize);
-  //   return () => window.removeEventListener('resize', onResize);
-  // }, []);
 
   const { width, height } = useWindowSize();
 

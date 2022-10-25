@@ -105,8 +105,17 @@ const plansPage: NextPage = () => {
             },
           }}
         >
-          <Flex as="li" textStyle="planCardWrap">
-            <Flex textStyle="planCard">
+          <Flex
+            as="li"
+            textStyle="planCardWrap"
+            sx={{
+              margin: {
+                base: '0',
+                md: '64px 0 0',
+              },
+            }}
+          >
+            <Flex p="40px 32px" textStyle="planCard">
               <PlanCardHeading data="恋愛・婚活相談" />
               <Text
                 w="fit-content"
@@ -153,14 +162,14 @@ const plansPage: NextPage = () => {
           </Flex>
           {option.map((item, i) => {
             return (
-              <Flex as="li" textStyle="planCardWrap" key={i}>
+              <Flex as="li" key={i} textStyle="planCardWrap">
                 {item.copy !== undefined && (
                   <>
                     <PlanCardCopy data={item.copy} />
                     <OriginalSpacer size="24px" />
                   </>
                 )}
-                <Flex textStyle="planCard">
+                <Flex p="40px 32px" textStyle="planCard">
                   <PlanCardHeading data={item.title} />
                   <Flex
                     flexDirection="column"

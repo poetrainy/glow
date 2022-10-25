@@ -5,8 +5,11 @@ import { flow } from '../libs/flow';
 import Allow from './Allow';
 import Heading from './Heading';
 import OriginalSpacer from './OriginalSpacer';
+import { useWindowSize } from 'react-use';
 
 const IndexFlow: FC = () => {
+  const { width, height } = useWindowSize();
+
   return (
     <Box
       as="section"
@@ -73,7 +76,10 @@ const IndexFlow: FC = () => {
               >
                 0{i + 1}
               </Flex>
-              <Flex w="100%" h="200px">
+              <Flex
+                w="100%"
+                sx={{ height: { base: '200px', sm: '320px', md: '200px' } }}
+              >
                 <Box
                   as="img"
                   src={item.img}

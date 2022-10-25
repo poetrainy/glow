@@ -8,10 +8,13 @@ type Props = {
 const Allow: FC<Props> = ({ gray }) => {
   return (
     <Flex
+      justifyContent="center"
+      alignItems="center"
       pos="relative"
       sx={{
         ...(gray
           ? {
+              height: '24px',
               '&::before': {
                 content: "''",
                 display: 'block',
@@ -21,7 +24,7 @@ const Allow: FC<Props> = ({ gray }) => {
                 margin: '0 25px 0 0',
                 transform: 'rotateZ(24deg)',
                 position: 'absolute',
-                inset: '32px auto auto auto',
+                inset: '16px auto auto auto',
               },
               '&::after': {
                 content: "''",
@@ -32,7 +35,7 @@ const Allow: FC<Props> = ({ gray }) => {
                 margin: '0 0 0 25px',
                 transform: 'rotateZ(-24deg)',
                 position: 'absolute',
-                inset: '32px auto auto auto',
+                inset: '16px auto auto auto',
               },
             }
           : {
