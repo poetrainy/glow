@@ -19,6 +19,7 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ indexFaqData }) => {
+
   return (
     <>
       <HeadOgp />

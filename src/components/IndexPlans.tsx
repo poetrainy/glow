@@ -16,7 +16,8 @@ const IndexStrength: FC = () => {
       <Flex
         as="ul"
         justifyContent="space-between"
-        gap="5%"
+        gap="24px"
+        flexWrap="wrap"
         w="80vw"
         maxW="1080px"
         mx="auto"
@@ -25,10 +26,15 @@ const IndexStrength: FC = () => {
           return (
             <Flex
               as="li"
+              key={i}
               alignItems="center"
               flexDirection="column"
-              w="calc((100% - 5% * 2) / 3)"
-              key={i}
+              sx={{
+                width: {
+                  base: '100%',
+                  lg: 'calc(100% - 24px * 2 / 3)',
+                },
+              }}
             >
               <PlanCardCopy data={item.copy} />
               <OriginalSpacer size="20px" />

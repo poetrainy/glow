@@ -38,7 +38,7 @@ const Allow: FC<Props> = ({ gray }) => {
           : {
               justifyContent: 'center',
               alignItems: 'center',
-              width: 'calc(20% / 4)',
+              width: '56px',
               height: 'auto',
               '&::before': {
                 content: "''",

@@ -29,9 +29,30 @@ const IndexStrength: FC = () => {
         w="80vw"
         maxW="1080px"
         mx="auto"
+        sx={{
+          flexDirection: {
+            base: 'column',
+            md: 'row',
+          },
+          gap: {
+            base: '48px',
+            md: '0',
+          },
+        }}
       >
         {strength.map((item, i) => (
-          <Flex as="li" flexDirection="column" w="30%" key={i}>
+          <Flex
+            as="li"
+            flexDirection="column"
+            w="30%"
+            key={i}
+            sx={{
+              width: {
+                base: '100%',
+                md: '30%',
+              },
+            }}
+          >
             <Box as="img" w="100%" h="200px" bg="gray" />
             <OriginalSpacer size="28px" />
             <Flex

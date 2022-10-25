@@ -38,6 +38,7 @@ const breakpoints = {
   sm: '640px',
   md: '880px',
   lg: '1000px',
+  xl: '1120px',
 };
 const textStyles = {
   sectionWidth: {
@@ -57,10 +58,16 @@ const textStyles = {
       'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-    // border: '1px solid #fff',
-    // borderImage:
-    //   'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
-    // borderImageSlice: '1',
+  },
+  borderGradation: {
+    background:
+      'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    border: '1px solid #fff',
+    borderImage:
+      'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
+    borderImageSlice: '1',
   },
   rainbowCircle: {
     content: "''",
@@ -87,7 +94,7 @@ const textStyles = {
     alignItems: 'center',
     flexDirection: 'column',
     width: '100%',
-    padding: '40px 32px',
+    padding: '40px 0',
     boxShadow: '0px 3px 16px rgba(0, 0, 0, 0.07)',
     borderRadius: '16px',
   },

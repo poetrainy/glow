@@ -1,20 +1,7 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
-import { FC, useEffect, useState } from 'react';
-import NextLink from 'next/link';
-import OriginalSpacer from './OriginalSpacer';
+import { Flex, Text } from '@chakra-ui/react';
+import { FC } from 'react';
 
 const Navigation: FC = () => {
-  const [windowWidth, setWindowWidth] = useState<number>(0);
-  useEffect(() => {
-    const onResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
-
-  console.log(windowWidth < 1080);
-
   return (
     <Flex
       // as="a"
@@ -74,7 +61,10 @@ const Navigation: FC = () => {
               base: 'center',
               md: 'left',
             },
-            ...(windowWidth < 1080 && { width: 'calc(3.2rem * 10)' }),
+            width: {
+              base: 'calc(3.2rem * 10)',
+              lg: 'auto',
+            },
           }}
         >
           お気軽にお問い合わせくださいませ。

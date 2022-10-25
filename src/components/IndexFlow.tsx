@@ -28,14 +28,26 @@ const IndexFlow: FC = () => {
         as="ul"
         justifyContent="center"
         flexWrap="wrap"
+        gap="80px 0"
         w="85vw"
         maxW="1200px"
+        p="0 0 0 28px"
         mx="auto"
         pos="relative"
       >
         {flow.map((item, i) => (
-          <Flex w="fit-content" key={i}>
-            <Flex as="li" flexDirection="column" w="21%">
+          <Flex
+            as="li"
+            key={i}
+            sx={{
+              width: {
+                base: '100%',
+                md: '50%',
+                xl: '25%',
+              },
+            }}
+          >
+            <Box w="calc(100% - 56px)">
               <Flex
                 justifyContent="center"
                 alignItems="center"
@@ -47,7 +59,7 @@ const IndexFlow: FC = () => {
                 pos="absolute"
                 inset="auto"
                 zIndex="2"
-                textStyle="textGradation"
+                textStyle="borderGradation"
                 sx={{
                   '&::before': {
                     content: "''",
@@ -83,8 +95,8 @@ const IndexFlow: FC = () => {
               <Text lineHeight="3rem" fontSize="1.4rem">
                 {item.text}
               </Text>
-            </Flex>
-            {i === 3 || i === 6 ? '' : <Allow />}
+            </Box>
+            {i === 6 ? '' : <Allow />}
           </Flex>
         ))}
       </Flex>
