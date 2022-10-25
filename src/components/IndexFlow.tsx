@@ -71,7 +71,6 @@ const IndexFlow: FC = () => {
                     background: 'white',
                     position: 'absolute',
                     inset: '0 0 auto auto',
-                    // zIndex: '3',
                   },
                 }}
               >

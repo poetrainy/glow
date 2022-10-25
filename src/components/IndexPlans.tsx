@@ -16,7 +16,6 @@ const IndexStrength: FC = () => {
       <Flex
         as="ul"
         justifyContent="space-between"
-        // gap="24px"
         w="80vw"
         maxW="1080px"
         mx="auto"

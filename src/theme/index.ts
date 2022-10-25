@@ -93,7 +93,6 @@ const textStyles = {
   planCard: {
     alignItems: 'center',
     flexDirection: 'column',
-    // width: '100%',
     boxShadow: '0px 3px 16px rgba(0, 0, 0, 0.07)',
     borderRadius: '16px',
   },
