@@ -27,6 +27,7 @@ const IndexService: FC = () => {
         gap="5%"
         maxW="1200px"
         mx="auto"
+        pos="relative"
         sx={{
           flexDirection: {
             base: 'column',
@@ -34,6 +35,27 @@ const IndexService: FC = () => {
           },
           width: {
             md: '90%',
+          },
+          '&::before': {
+            content: "''",
+            display: {
+              base: 'none',
+              md: 'block',
+            },
+            width: {
+              base: '400px',
+              xl: '600px',
+            },
+            height: '320px',
+            background:
+              "url('https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/0b618942efa24b0ea4abc8087574a2e6/icon_service_2.png')",
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            position: 'absolute',
+            inset: {
+              base: 'auto -2% -200px auto',
+              xl: 'auto -5% -200px auto',
+            },
           },
         }}
       >
@@ -48,7 +70,7 @@ const IndexService: FC = () => {
               md: '720px',
             },
             boxShadow: {
-              md: '120px 64px 0 rgba(0, 0, 0, 0.015',
+              md: '120px 64px 0 rgba(0, 0, 0, 0.015)',
             },
           }}
         >
@@ -71,6 +93,10 @@ const IndexService: FC = () => {
               base: '0',
               sm: '40px 0 0',
               md: '80px 0 0',
+            },
+            padding: {
+              base: '0 5%',
+              md: '0',
             },
           }}
         >

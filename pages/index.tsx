@@ -28,7 +28,7 @@ const Home: NextPage<Props> = ({ indexFaqData }) => {
       <FirstView />
       <OriginalSpacer size="184px" />
       <IndexService />
-      <OriginalSpacer size="184px" />
+      <OriginalSpacer size="240px" />
       <IndexStrength />
       <OriginalSpacer size="184px" />
       <IndexFlow />

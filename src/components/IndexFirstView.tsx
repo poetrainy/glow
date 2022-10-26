@@ -23,7 +23,7 @@ const IndexFirstView: FC = () => {
         bgSize="cover"
         p="80px 56px"
       >
-        <Text as="h2" fontSize="5rem">
+        <Text as="h2" fontSize="5rem" textShadow="0 0 20px rgba(0, 0, 0, 0.4)">
           テキストが入ります。
         </Text>
         <OriginalSpacer size="8px" />
