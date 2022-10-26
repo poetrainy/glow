@@ -21,7 +21,7 @@ const IndexFirstView: FC = () => {
         bg="url(https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/3ee965d5d96d4ef69794c484e0c285db/fv.png?w=2000)"
         bgRepeat="no-repeat"
         bgSize="cover"
-        p="40px 24px"
+        p="80px 56px"
       >
         <Text as="h2" fontSize="5rem">
           テキストが入ります。

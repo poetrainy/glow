@@ -46,7 +46,7 @@ const IndexFlow: FC = () => {
               width: {
                 base: '100%',
                 md: '50%',
-                xl: '25%',
+                '2xl': '25%',
               },
             }}
           >

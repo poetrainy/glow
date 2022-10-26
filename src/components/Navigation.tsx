@@ -5,6 +5,7 @@ import indexContents from '../libs/contents';
 import { Link as Scroll } from 'react-scroll';
 import NextLink from 'next/link';
 import { useWindowSize } from 'react-use';
+import { getWindowSize } from '../libs/getWindowSize';
 
 type Props = {
   index?: boolean;
@@ -13,9 +14,14 @@ type Props = {
 const Navigation: FC<Props> = ({ index }) => {
   const { width, height } = useWindowSize();
   const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [navFlag, setNavFlag] = useState<boolean>(false);
   useEffect(() => {
     setWindowWidth(width);
   }, []);
+
+  const navButtonClick = () => {
+    setNavFlag(!navFlag);
+  };
 
   return (
     <Flex
@@ -35,7 +41,7 @@ const Navigation: FC<Props> = ({ index }) => {
             opacity="1"
             transition="opacity 0.2s"
             _hover={{
-              opacity: 0.6,
+              opacity: 0.5,
               cursor: 'pointer',
             }}
           >
@@ -47,34 +53,46 @@ const Navigation: FC<Props> = ({ index }) => {
         sx={{
           gap: {
             base: '16px',
-            lg: '40px',
+            xl: '40px',
           },
         }}
       >
         {index && (
-          // <Flex as="ul" alignItems="center" gap="16px">
-          //   {indexContents.map((item, i) => (
-          //     <Scroll to={item.id} smooth={true} offset={-130} key={i}>
-          //       <Flex
-          //         key={i}
-          //         opacity="1"
-          //         transition="opacity 0.2s"
-          //         textShadow="0 0 8px #fff"
-          //         _hover={{
-          //           opacity: 0.4,
-          //           cursor: 'pointer',
-          //         }}
-          //       >
-          //         {item.title}
-          //       </Flex>
-          //     </Scroll>
-          //   ))}
-          // </Flex>
           <>
-            {windowWidth < 1080 && (
+            {getWindowSize().width > 1080 || navFlag ? (
+              <Flex as="ul" alignItems="center" gap="16px">
+                {indexContents.map((item, i) => (
+                  <Scroll to={item.id} smooth={true} offset={-130} key={i}>
+                    <Flex
+                      key={i}
+                      opacity="1"
+                      transition="opacity 0.2s"
+                      textShadow="0 0 8px #fff"
+                      _hover={{
+                        opacity: 0.4,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {item.title}
+                    </Flex>
+                  </Scroll>
+                ))}
+              </Flex>
+            ) : (
+              ''
+            )}
+            {getWindowSize().width < 1080 && (
               <Box
                 // as="button"
+                onClick={() => navButtonClick()}
                 order="2"
+                p="13px 0 0"
+                opacity="1"
+                transition="opacity 0.2s"
+                _hover={{
+                  opacity: '0.5',
+                  cursor: 'pointer',
+                }}
               >
                 <Box
                   as="span"
@@ -142,7 +160,7 @@ const Navigation: FC<Props> = ({ index }) => {
             },
             order: {
               base: '1',
-              lg: '2',
+              xl: '2',
             },
           }}
         >
