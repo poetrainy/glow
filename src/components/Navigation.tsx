@@ -3,7 +3,6 @@ import { FC, useEffect, useState } from 'react';
 import indexContents from '../libs/contents';
 import NextLink from 'next/link';
 import { useMount, useWindowSize, useHash } from 'react-use';
-// import { getWindowSize } from '../libs/getWindowSize';
 import arrow from '../assets/icon_arrow';
 import { useRouter } from 'next/router';
 // @ts-ignore
@@ -16,32 +15,18 @@ type Props = {
   index?: boolean;
 };
 
-const pathnameList = ['/', '/', '/', 'plans', 'faq', '/'];
-
 const Navigation: FC<Props> = ({ index }) => {
   const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)');
   const [isSmailerThan1000] = useMediaQuery('(max-width: 1000px)');
-  // const [isSmailerThan640] = useMediaQuery('(max-width: 640px)');
-  // const { width, height } = useWindowSize();
-  // const [windowWidth, setWindowWidth] = useState<number>(0);
   const [navDomFlag, setNavDomFlag] = useState<boolean>(false);
   const [navDisplayFlag, setNavDisplayFlag] = useState<boolean>(false);
-  // useEffect(() => {
-  //   setWindowWidth(width);
-  // }, []);
 
   const navButtonClick = () => {
+    console.log('ok');
+
     if (!navDomFlag) {
       setNavDomFlag(true);
     }
-    // if (!navDisplayFlag && typeof window !== 'undefined') {
-    //   setWindowWidth(window.innerWidth);
-    // }
-    // if (navDisplayFlag) {
-    //   setNavDisplayFlag(false);
-    // } else {
-    //   setNavDisplayFlag(true);
-    // }
     setNavDisplayFlag(!navDisplayFlag);
   };
 
@@ -138,14 +123,14 @@ const Navigation: FC<Props> = ({ index }) => {
               }}
             >
               {indexContents.map((item, i) => (
-                <Flex
-                  as="li"
-                  key={i}
-                  textStyle="navigation"
-                  onClick={() => navButtonClick()}
-                >
+                <Flex as="li" key={i} textStyle="navigation">
                   {index ? (
-                    <Scroll to={item.id} smooth={true} offset={-130}>
+                    <Scroll
+                      to={item.id}
+                      smooth={false}
+                      offset={-130}
+                      onClick={() => navButtonClick()}
+                    >
                       {item.title}
                       {isSmailerThan1000 && <Box as={arrow} />}
                     </Scroll>

@@ -118,10 +118,10 @@ const textStyles = {
     minW: '296px',
   },
   navigation: {
-    // li: {
-    //   width: '100%',
-    //   height: '100%',
-    // },
+    li: {
+      width: '100%',
+      height: '100%',
+    },
     a: {
       display: 'flex',
       justifyContent: {
@@ -133,20 +133,25 @@ const textStyles = {
         lg: 'center',
       },
       width: '100%',
+      height: '100%',
     },
     alignItems: 'center',
     width: {
       base: '100%',
       lg: 'fit-content',
     },
+    height: {
+      base: '80px',
+      lg: 'auto',
+    },
     position: 'relative',
     opacity: '1',
     transition: 'opacity 0.2s',
     textShadow: '0 0 8px #fff',
-    padding: {
-      base: '24px 0',
-      lg: '0',
-    },
+    // padding: {
+    //   base: '24px 0',
+    //   lg: '0',
+    // },
     '&:hover': {
       opacity: 0.4,
       cursor: 'pointer',
