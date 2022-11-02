@@ -10,6 +10,7 @@ const styles = {
   global: {
     html: {
       fontSize: '62.5%',
+      scrollBehavior: 'smooth',
     },
     body: {
       color: 'black',
@@ -27,6 +28,9 @@ const styles = {
     },
     '::-moz-selection': {
       background: 'rgba(129, 214, 238, 0.2)',
+    },
+    ':target': {
+      scrollMarginTop: '130px',
     },
   },
 };
@@ -112,6 +116,55 @@ const textStyles = {
     alignItems: 'center',
     flexDirection: 'column',
     minW: '296px',
+  },
+  navigation: {
+    // li: {
+    //   width: '100%',
+    //   height: '100%',
+    // },
+    a: {
+      display: 'flex',
+      justifyContent: {
+        base: 'space-between',
+        lg: 'center',
+      },
+      alignItems: {
+        base: 'center',
+        lg: 'center',
+      },
+      width: '100%',
+    },
+    alignItems: 'center',
+    width: {
+      base: '100%',
+      lg: 'fit-content',
+    },
+    position: 'relative',
+    opacity: '1',
+    transition: 'opacity 0.2s',
+    textShadow: '0 0 8px #fff',
+    padding: {
+      base: '24px 0',
+      lg: '0',
+    },
+    '&:hover': {
+      opacity: 0.4,
+      cursor: 'pointer',
+    },
+    '&::before': {
+      content: "''",
+      display: {
+        base: 'block',
+        lg: 'none',
+      },
+      width: '100%',
+      height: '2px',
+      background:
+        'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
+      opacity: '0.3',
+      position: 'absolute',
+      inset: 'auto 0 0 auto',
+    },
   },
 };
 

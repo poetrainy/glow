@@ -5,29 +5,38 @@ import { useWindowSize } from 'react-use';
 import OriginalSpacer from './OriginalSpacer';
 
 const IndexFirstView: FC = () => {
-  const { width, height } = useWindowSize();
-  const [windowHeight, setWindowHeight] = useState<number>(0);
-  useEffect(() => {
-    setWindowHeight(height);
-  }, []);
-
   return (
     <>
       <Flex
         flexDirection="column"
         w="100%"
-        h={`calc(${windowHeight}px - 80px * 2)`}
         color="white"
         bg="url(https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/3ee965d5d96d4ef69794c484e0c285db/fv.png?w=2000)"
         bgRepeat="no-repeat"
         bgSize="cover"
-        p="80px 56px"
+        p="80px 5%"
+        height={{
+          base: 'calc(100vh - 80px * 2 - 80px)',
+          sm: 'calc(100vh - 80px * 2)',
+        }}
       >
-        <Text as="h2" fontSize="5rem" textShadow="0 0 20px rgba(0, 0, 0, 0.4)">
+        <Text
+          as="h2"
+          textShadow="0 0 20px rgba(0, 0, 0, 0.4)"
+          fontSize={{
+            base: '3.5rem',
+            sm: '5rem',
+          }}
+        >
           テキストが入ります。
         </Text>
         <OriginalSpacer size="8px" />
-        <Text fontSize="2.5rem">
+        <Text
+          fontSize={{
+            base: '2rem',
+            sm: '2.5rem',
+          }}
+        >
           トランスジェンダー専門
           <br />
           結婚相談サービス

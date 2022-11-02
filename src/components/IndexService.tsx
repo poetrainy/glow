@@ -90,8 +90,7 @@ const IndexService: FC = () => {
               md: '35%',
             },
             margin: {
-              base: '0',
-              sm: '40px 0 0',
+              base: '40px 0 0',
               md: '80px 0 0',
             },
             padding: {
@@ -100,12 +99,19 @@ const IndexService: FC = () => {
             },
           }}
         >
-          <Text fontSize="3rem">
+          <Text
+            fontSize="3rem"
+            sx={{
+              margin: {
+                base: '0 0 24px',
+                md: '0 0 40px',
+              },
+            }}
+          >
             トランスジェンダー専門
             <br />
             結婚相談サービス
           </Text>
-          <OriginalSpacer size="40px" />
           <Text lineHeight="4.2rem">
             サービスの説明文が入ります。この文章はタイトルです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーサービスの説明文が入ります。この文章はタイトルです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章は
           </Text>

@@ -1,27 +1,57 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { FC, useEffect, useState } from 'react';
 import indexContents from '../libs/contents';
+import NextLink from 'next/link';
+import { useMount, useWindowSize, useHash } from 'react-use';
+// import { getWindowSize } from '../libs/getWindowSize';
+import arrow from '../assets/icon_arrow';
+import { useRouter } from 'next/router';
 // @ts-ignore
 import { Link as Scroll } from 'react-scroll';
-import NextLink from 'next/link';
-import { useWindowSize } from 'react-use';
-import { getWindowSize } from '../libs/getWindowSize';
+import { useMediaQuery } from '@chakra-ui/react';
+import Infomation from '../components/Infomation';
+import OriginalSpacer from './OriginalSpacer';
 
 type Props = {
   index?: boolean;
 };
 
+const pathnameList = ['/', '/', '/', 'plans', 'faq', '/'];
+
 const Navigation: FC<Props> = ({ index }) => {
-  const { width, height } = useWindowSize();
-  const [windowWidth, setWindowWidth] = useState<number>(0);
-  const [navFlag, setNavFlag] = useState<boolean>(false);
-  useEffect(() => {
-    setWindowWidth(width);
-  }, []);
+  const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)');
+  const [isSmailerThan1000] = useMediaQuery('(max-width: 1000px)');
+  // const [isSmailerThan640] = useMediaQuery('(max-width: 640px)');
+  // const { width, height } = useWindowSize();
+  // const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [navDomFlag, setNavDomFlag] = useState<boolean>(false);
+  const [navDisplayFlag, setNavDisplayFlag] = useState<boolean>(false);
+  // useEffect(() => {
+  //   setWindowWidth(width);
+  // }, []);
 
   const navButtonClick = () => {
-    setNavFlag(!navFlag);
+    if (!navDomFlag) {
+      setNavDomFlag(true);
+    }
+    // if (!navDisplayFlag && typeof window !== 'undefined') {
+    //   setWindowWidth(window.innerWidth);
+    // }
+    // if (navDisplayFlag) {
+    //   setNavDisplayFlag(false);
+    // } else {
+    //   setNavDisplayFlag(true);
+    // }
+    setNavDisplayFlag(!navDisplayFlag);
   };
+
+  const router = useRouter();
+
+  useMount(() => {
+    if (window && router.query.hash) {
+      window.location.hash = String(router.query.hash);
+    }
+  });
 
   return (
     <Flex
@@ -29,10 +59,17 @@ const Navigation: FC<Props> = ({ index }) => {
       h="80px"
       justifyContent="space-between"
       alignItems="center"
+      background="transparent"
+      transition="background 0.3s"
       px="24px"
       pos="fixed"
       inset="0 0 auto auto"
       zIndex="30"
+      sx={{
+        ...(navDisplayFlag && {
+          background: '#ffffff',
+        }),
+      }}
     >
       <Box as="h1">
         <NextLink href="/" passHref>
@@ -50,6 +87,8 @@ const Navigation: FC<Props> = ({ index }) => {
         </NextLink>
       </Box>
       <Flex
+        h="100%"
+        alignItems="center"
         sx={{
           gap: {
             base: '16px',
@@ -57,83 +96,141 @@ const Navigation: FC<Props> = ({ index }) => {
           },
         }}
       >
-        {index && (
-          <>
-            {getWindowSize().width > 1080 || navFlag ? (
-              <Flex as="ul" alignItems="center" gap="16px">
-                {indexContents.map((item, i) => (
-                  <Scroll to={item.id} smooth={true} offset={-130} key={i}>
-                    <Flex
-                      key={i}
-                      opacity="1"
-                      transition="opacity 0.2s"
-                      textShadow="0 0 8px #fff"
-                      _hover={{
-                        opacity: 0.4,
-                        cursor: 'pointer',
-                      }}
-                    >
-                      {item.title}
-                    </Flex>
-                  </Scroll>
-                ))}
-              </Flex>
-            ) : (
-              ''
-            )}
-            {getWindowSize().width < 1080 && (
-              <Box
-                // as="button"
-                onClick={() => navButtonClick()}
-                order="2"
-                p="13px 0 0"
-                opacity="1"
-                transition="opacity 0.2s"
-                _hover={{
-                  opacity: '0.5',
-                  cursor: 'pointer',
-                }}
-              >
-                <Box
-                  as="span"
-                  display="block"
-                  w="100%"
-                  h="1px"
-                  bg="black"
-                  pos="relative"
-                  sx={{
-                    '&::before': {
-                      content: "''",
-                      display: 'block',
-                      width: '100%',
-                      height: '1px',
-                      background: 'black',
-                      position: 'absolute',
-                      inset: 'auto 0 8px 0',
-                    },
-                    '&::after': {
-                      content: "''",
-                      display: 'block',
-                      width: '100%',
-                      height: '1px',
-                      background: 'black',
-                      position: 'absolute',
-                      inset: '8px 0 auto 0',
-                    },
-                  }}
-                />
-                <Text
-                  as="span"
-                  display="block"
-                  fontFamily="number"
-                  fontSize="1.4rem"
-                  transform="translateY(12px)"
+        {isLargerThan1000 || navDomFlag ? (
+          <Flex
+            flexDirection="column"
+            sx={{
+              justifyContent: {
+                lg: 'center',
+              },
+              ...(isSmailerThan1000 && {
+                width: '100%',
+                minHeight: 'calc(100vh - 80px)',
+                background: '#ffffff',
+                padding: '0 0 80px',
+                position: 'fixed',
+                inset: '80px 0 auto auto',
+                overflow: 'scroll',
+                transform: 'translateX(100%)',
+                transition: 'transform 0.3s',
+              }),
+              ...(isSmailerThan1000 &&
+                navDisplayFlag && {
+                  transform: 'translateX(0)',
+                }),
+            }}
+          >
+            <Flex
+              as="ul"
+              alignItems="center"
+              sx={{
+                gap: {
+                  base: '0',
+                  lg: '32px',
+                },
+                ...(isSmailerThan1000 && {
+                  alignItems: 'flex-start',
+                  flexDirection: 'column',
+                  width: '100%',
+                  fontSize: '2rem',
+                  padding: '0 7%',
+                }),
+              }}
+            >
+              {indexContents.map((item, i) => (
+                <Flex
+                  as="li"
+                  key={i}
+                  textStyle="navigation"
+                  onClick={() => navButtonClick()}
                 >
-                  MENU
-                </Text>
-              </Box>
+                  {index ? (
+                    <Scroll to={item.id} smooth={true} offset={-130}>
+                      {item.title}
+                      {isSmailerThan1000 && <Box as={arrow} />}
+                    </Scroll>
+                  ) : (
+                    <NextLink
+                      href={{
+                        pathname: item.url ? item.id : '/',
+                        ...(!item.url && {
+                          query: {
+                            hash: item.id,
+                          },
+                        }),
+                      }}
+                      passHref
+                    >
+                      <Flex as="a">
+                        <Text>{item.title}</Text>
+                        {isSmailerThan1000 && <Box as={arrow} />}
+                      </Flex>
+                    </NextLink>
+                  )}
+                </Flex>
+              ))}
+            </Flex>
+            {isSmailerThan1000 && (
+              <>
+                <OriginalSpacer size="40px" />
+                <Infomation />
+              </>
             )}
-          </>
+          </Flex>
+        ) : (
+          ''
+        )}
+        {isSmailerThan1000 && (
+          <Box
+            // as="button"
+            onClick={() => navButtonClick()}
+            order="2"
+            p="13px 0 0"
+            opacity="1"
+            transition="opacity 0.2s"
+            _hover={{
+              opacity: '0.5',
+              cursor: 'pointer',
+            }}
+          >
+            <Box
+              as="span"
+              display="block"
+              w="100%"
+              h="1px"
+              bg="black"
+              pos="relative"
+              sx={{
+                '&::before': {
+                  content: "''",
+                  display: 'block',
+                  width: '100%',
+                  height: '1px',
+                  background: 'black',
+                  position: 'absolute',
+                  inset: 'auto 0 8px 0',
+                },
+                '&::after': {
+                  content: "''",
+                  display: 'block',
+                  width: '100%',
+                  height: '1px',
+                  background: 'black',
+                  position: 'absolute',
+                  inset: '8px 0 auto 0',
+                },
+              }}
+            />
+            <Text
+              as="span"
+              display="block"
+              fontFamily="number"
+              fontSize="1.4rem"
+              transform="translateY(12px)"
+            >
+              MENU
+            </Text>
+          </Box>
         )}
         <Flex
           as="a"

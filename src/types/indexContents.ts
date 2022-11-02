@@ -3,4 +3,5 @@ export type indexContentsType = {
   en: string;
   id: string;
   svg: any;
+  url: boolean;
 };

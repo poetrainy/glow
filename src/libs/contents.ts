@@ -13,36 +13,42 @@ const indexContents: indexContentsType[] = [
     en: 'Service',
     id: 'service',
     svg: service,
+    url: false,
   },
   {
     title: 'GLOWの強み',
     en: 'Strength',
     id: 'strength',
     svg: strength,
+    url: false,
   },
   {
     title: 'ご成婚までの流れ',
     en: 'Flow of Marriage',
     id: 'flow',
     svg: flow,
+    url: false,
   },
   {
     title: '料金プラン',
     en: 'Rate Plans',
     id: 'plans',
     svg: plans,
+    url: true,
   },
   {
     title: 'よくある質問',
     en: 'FAQ',
     id: 'faq',
     svg: faq,
+    url: true,
   },
   {
     title: 'アクセス',
     en: 'Access',
     id: 'access',
     svg: access,
+    url: false,
   },
 ];
 
