@@ -13,34 +13,57 @@ import Foot from '../src/components/Foot';
 import { client } from '../src/libs/client';
 import { faqType } from '../src/types/microCms';
 import HeadOgp from '../src/components/HeadOgp';
+import FadeIn from '../src/components/FadeIn';
+import React from 'react';
 
 type Props = {
   indexFaqData: faqType[];
 };
 
 const Home: NextPage<Props> = ({ indexFaqData }) => {
+  const components = [
+    {
+      component: <IndexService />,
+      size: 184,
+    },
+    {
+      component: <IndexStrength />,
+      size: 240,
+    },
+    {
+      component: <IndexFlow />,
+      size: 184,
+    },
+    {
+      component: <IndexPlans />,
+      size: 184,
+    },
+    {
+      component: <Contact />,
+      size: 184,
+    },
+    {
+      component: <IndexFaq data={indexFaqData} />,
+      size: 184,
+    },
+    {
+      component: <IndexAccess />,
+      size: 184,
+    },
+    {
+      component: <Contact />,
+      size: 184,
+    },
+  ];
   return (
     <>
       <HeadOgp />
       <OriginalSpacer size="80px" />
       <Navigation index />
       <FirstView />
-      <OriginalSpacer size="184px" />
-      <IndexService />
-      <OriginalSpacer size="240px" />
-      <IndexStrength />
-      <OriginalSpacer size="184px" />
-      <IndexFlow />
-      <OriginalSpacer size="184px" />
-      <IndexPlans />
-      <OriginalSpacer size="184px" />
-      <Contact />
-      <OriginalSpacer size="184px" />
-      <IndexFaq data={indexFaqData} />
-      <OriginalSpacer size="184px" />
-      <IndexAccess />
-      <OriginalSpacer size="184px" />
-      <Contact />
+      {components.map((item, i) => (
+        <FadeIn children={item.component} size={item.size} key={i} />
+      ))}
       <Foot />
     </>
   );

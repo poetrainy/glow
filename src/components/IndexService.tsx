@@ -1,5 +1,6 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
-import { FC } from 'react';
+import { FC, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
 import contents from '../libs/contents';
 import Heading from './Heading';
 import OriginalSpacer from './OriginalSpacer';

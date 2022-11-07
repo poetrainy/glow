@@ -1,8 +1,8 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import indexContents from '../libs/contents';
 import NextLink from 'next/link';
-import { useMount, useWindowSize, useHash } from 'react-use';
+import { useMount } from 'react-use';
 import arrow from '../assets/icon_arrow';
 import { useRouter } from 'next/router';
 // @ts-ignore
@@ -17,7 +17,7 @@ type Props = {
 
 const Navigation: FC<Props> = ({ index }) => {
   const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)');
-  const [isSmailerThan1000] = useMediaQuery('(max-width: 1000px)');
+  const [isSmailerThan1000] = useMediaQuery('(max-width: 999px)');
   const [navDomFlag, setNavDomFlag] = useState<boolean>(false);
   const [navDisplayFlag, setNavDisplayFlag] = useState<boolean>(false);
 
@@ -51,9 +51,10 @@ const Navigation: FC<Props> = ({ index }) => {
       inset="0 0 auto auto"
       zIndex="30"
       sx={{
-        ...(navDisplayFlag && {
-          background: '#ffffff',
-        }),
+        ...(isSmailerThan1000 &&
+          navDisplayFlag && {
+            background: 'white',
+          }),
       }}
     >
       <Box as="h1">
@@ -91,13 +92,13 @@ const Navigation: FC<Props> = ({ index }) => {
               ...(isSmailerThan1000 && {
                 width: '100%',
                 minHeight: 'calc(100vh - 80px)',
-                background: '#ffffff',
+                background: 'white',
                 padding: '0 0 80px',
                 position: 'fixed',
                 inset: '80px 0 auto auto',
                 overflow: 'scroll',
                 transform: 'translateX(100%)',
-                transition: 'transform 0.3s',
+                transition: 'transform 0.3s, opacity 0.3s',
               }),
               ...(isSmailerThan1000 &&
                 navDisplayFlag && {
@@ -111,7 +112,7 @@ const Navigation: FC<Props> = ({ index }) => {
               sx={{
                 gap: {
                   base: '0',
-                  lg: '32px',
+                  lg: '8px',
                 },
                 ...(isSmailerThan1000 && {
                   alignItems: 'flex-start',
@@ -123,7 +124,12 @@ const Navigation: FC<Props> = ({ index }) => {
               }}
             >
               {indexContents.map((item, i) => (
-                <Flex as="li" key={i} textStyle="navigation">
+                <Flex
+                  as="li"
+                  key={i}
+                  textStyle="navigation"
+                  p={{ lg: '0 12px' }}
+                >
                   {index ? (
                     <Scroll
                       to={item.id}
@@ -170,7 +176,6 @@ const Navigation: FC<Props> = ({ index }) => {
             // as="button"
             onClick={() => navButtonClick()}
             order="2"
-            p="13px 0 0"
             opacity="1"
             transition="opacity 0.2s"
             _hover={{
@@ -179,39 +184,49 @@ const Navigation: FC<Props> = ({ index }) => {
             }}
           >
             <Box
-              as="span"
-              display="block"
-              w="100%"
-              h="1px"
-              bg="black"
-              pos="relative"
+              display="inline-block"
+              transition="all 0.4s"
+              position="relative"
+              width="100%"
+              height="22px"
+              background="none"
+              border="none"
+              appearance="none"
+              cursor="pointer"
               sx={{
-                '&::before': {
-                  content: "''",
-                  display: 'block',
-                  width: '100%',
-                  height: '1px',
-                  background: 'black',
+                span: {
+                  display: 'inline-block',
+                  transition: 'all 0.4s',
                   position: 'absolute',
-                  inset: 'auto 0 8px 0',
-                },
-                '&::after': {
-                  content: "''",
-                  display: 'block',
+                  left: '0',
                   width: '100%',
-                  height: '1px',
-                  background: 'black',
-                  position: 'absolute',
-                  inset: '8px 0 auto 0',
+                  height: '2px',
+                  backgroundColor: 'black',
+                  borderRadius: '4px',
+                  ...(navDisplayFlag && {
+                    '&:nth-of-type(1)': {
+                      transform: 'translateY(12px) rotate(-315deg)',
+                    },
+                    '&:nth-of-type(2)': {
+                      opacity: '0',
+                    },
+                    '&:nth-of-type(3)': {
+                      transform: 'translateY(-8.5px) rotate(315deg)',
+                    },
+                  }),
                 },
               }}
-            />
+            >
+              <Box as="span" top="0" />
+              <Box as="span" top="10px" />
+              <Box as="span" bottom="0" />
+            </Box>
             <Text
               as="span"
               display="block"
               fontFamily="number"
-              fontSize="1.4rem"
-              transform="translateY(12px)"
+              fontSize="1.3rem"
+              lineHeight="1.3rem"
             >
               MENU
             </Text>
