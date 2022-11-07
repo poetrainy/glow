@@ -18,14 +18,16 @@ const Link: FC<Props> = ({ text, url }) => {
         w="fit-content"
         mx="auto"
         transform="translateX(16px)"
-        transition="opacity 0.2s"
+        transition="gap 0.2s, transform 0.2s"
         fontSize="2.4rem"
         _hover={{
+          gap: '24px',
+          transform: 'translateX(20px)',
           '>p': {
             opacity: '0.5',
           },
           '>span': {
-            background: 'linear-gradient(90deg, #FFE259 0%, #FFA751 100%)',
+            background: 'orangeGradation',
             inset: 'auto -72px auto auto',
             '&::after': {
               content: "''",
@@ -64,7 +66,7 @@ const Link: FC<Props> = ({ text, url }) => {
               width: '48px',
               height: '48px',
               borderRadius: '9999px',
-              background: 'linear-gradient(90deg, #FFE259 0%, #FFA751 100%)',
+              background: 'orangeGradation',
               position: 'absolute',
               inset: 'auto',
               zIndex: '-1',
@@ -87,15 +89,15 @@ const Link: FC<Props> = ({ text, url }) => {
             display="inline-flex"
             w="16px"
             h="2px"
+            background="orangeGradation"
             transition="background 0.2s"
             pos="relative"
             zIndex="2"
-            textStyle="orangeGradation"
             sx={{
               '&::before': {
                 content: "''",
                 display: 'block',
-                background: 'linear-gradient(90deg, #FFE259 0%, #FFA751 100%)',
+                background: 'orangeGradation',
                 width: '10px',
                 height: '2px',
                 transform: 'rotateZ(45deg)',
@@ -106,7 +108,7 @@ const Link: FC<Props> = ({ text, url }) => {
               '&::after': {
                 content: "''",
                 display: 'block',
-                background: 'linear-gradient(90deg, #FFE259 0%, #FFA751 100%)',
+                background: 'orangeGradation',
                 width: '10px',
                 height: '2px',
                 transform: 'rotateZ(-45deg)',

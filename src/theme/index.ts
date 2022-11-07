@@ -6,6 +6,7 @@ const colors = {
   gray: '#BCBCBC',
   orange: '#FFC255',
   gradation: 'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 55%, #FCB6BE 100%)',
+  orangeGradation: 'linear-gradient(90deg, #FFE259 0%, #FFA751 100%)',
 };
 const styles = {
   global: {
@@ -51,9 +52,6 @@ const textStyles = {
     width: '100%',
     position: 'relative',
     overflowX: 'clip',
-  },
-  orangeGradation: {
-    background: 'linear-gradient(90deg, #FFE259 0%, #FFA751 100%)',
   },
   textGradation: {
     background: 'gradation',
