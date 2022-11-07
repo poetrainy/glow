@@ -9,20 +9,17 @@ type Props = {
 
 const Link: FC<Props> = ({ text, url }) => {
   return (
-    // <Flex>
     <NextLink href={url} passHref>
       <Flex
         as="a"
         justifyContent="center"
         alignItems="center"
+        gap="16px"
         w="fit-content"
         mx="auto"
-        pos="relative"
-        transform="translateX(-24px)"
+        transform="translateX(16px)"
         transition="opacity 0.2s"
-        // w="fit-content"
         fontSize="2.4rem"
-        // opacity="1"
         _hover={{
           '>p': {
             opacity: '0.5',
@@ -34,7 +31,7 @@ const Link: FC<Props> = ({ text, url }) => {
               content: "''",
               background: 'transparent',
             },
-            '>div': {
+            '>span': {
               background: '#ffffff',
               '&::before': {
                 content: "''",
@@ -51,25 +48,22 @@ const Link: FC<Props> = ({ text, url }) => {
         <Text opacity="1" transition="opacity 0.2s">
           {text}
         </Text>
-        {/* </Flex>
-      </NextLink> */}
         <Flex
           as="span"
+          display="inline-flex"
           justifyContent="center"
           alignItems="center"
           w="48px"
           h="48px"
           borderRadius="9999px"
           transition="inset 0.2s"
-          overflow="hidden"
-          pos="absolute"
-          inset="auto -64px auto auto"
           sx={{
             '&::before': {
               content: "''",
               display: 'block',
-              width: '100%',
-              height: '100%',
+              width: '48px',
+              height: '48px',
+              borderRadius: '9999px',
               background: 'linear-gradient(90deg, #FFE259 0%, #FFA751 100%)',
               position: 'absolute',
               inset: 'auto',
@@ -78,8 +72,8 @@ const Link: FC<Props> = ({ text, url }) => {
             '&::after': {
               content: "''",
               display: 'block',
-              width: '93%',
-              padding: '93% 0 0',
+              width: '45px',
+              padding: '45px 0 0',
               borderRadius: '9999px',
               background: 'white',
               transition: 'background 0.2s',
@@ -89,6 +83,8 @@ const Link: FC<Props> = ({ text, url }) => {
           }}
         >
           <Flex
+            as="span"
+            display="inline-flex"
             w="16px"
             h="2px"
             transition="background 0.2s"
@@ -123,7 +119,6 @@ const Link: FC<Props> = ({ text, url }) => {
         </Flex>
       </Flex>
     </NextLink>
-    // </Flex>
   );
 };
 

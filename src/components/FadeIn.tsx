@@ -41,7 +41,6 @@ const FadeIn: FC<Props> = ({ children, size }) => {
 
   useEffect(() => {
     if (inView) {
-      console.log('Ok');
       animation.start;
     }
   }, [inView]);
@@ -55,7 +54,7 @@ const FadeIn: FC<Props> = ({ children, size }) => {
         initial="hidden"
         animate={inView && 'show'}
         variants={variants}
-        // variants={{ variants }}
+
         ref={ref}
         // @ts-ignore
         // transition={{

@@ -51,8 +51,7 @@ const plansPage: NextPage = () => {
                       ? {
                           height: '56px',
                           color: 'white',
-                          background:
-                            'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
+                          background: 'gradation',
                           fontSize: '2rem',
                           fontWeight: 'bold',
                         }
@@ -237,7 +236,9 @@ const plansPage: NextPage = () => {
             {item.list.map((list: any, i2: number) => (
               <Flex as="li" key={i2} gap="8px">
                 <Box as={check} w="20px" m="4px 0 0" />
-                <Text w="calc(100% - 20px)" lineHeight="3rem">{list}</Text>
+                <Text w="calc(100% - 20px)" lineHeight="3rem">
+                  {list}
+                </Text>
               </Flex>
             ))}
           </Flex>

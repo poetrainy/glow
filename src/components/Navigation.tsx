@@ -22,8 +22,6 @@ const Navigation: FC<Props> = ({ index }) => {
   const [navDisplayFlag, setNavDisplayFlag] = useState<boolean>(false);
 
   const navButtonClick = () => {
-    console.log('ok');
-
     if (!navDomFlag) {
       setNavDomFlag(true);
     }
@@ -173,7 +171,6 @@ const Navigation: FC<Props> = ({ index }) => {
         )}
         {isSmailerThan1000 && (
           <Box
-            // as="button"
             onClick={() => navButtonClick()}
             order="2"
             opacity="1"
@@ -240,7 +237,7 @@ const Navigation: FC<Props> = ({ index }) => {
           alignItems="center"
           h="48px"
           color="white"
-          textStyle="mainGradation"
+          background="gradation"
           opacity="1"
           transition="opacity 0.2s"
           _hover={{

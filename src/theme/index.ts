@@ -5,6 +5,7 @@ const colors = {
   black: '#484848',
   gray: '#BCBCBC',
   orange: '#FFC255',
+  gradation: 'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 55%, #FCB6BE 100%)',
 };
 const styles = {
   global: {
@@ -51,27 +52,20 @@ const textStyles = {
     position: 'relative',
     overflowX: 'clip',
   },
-  mainGradation: {
-    background:
-      'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
-  },
   orangeGradation: {
     background: 'linear-gradient(90deg, #FFE259 0%, #FFA751 100%)',
   },
   textGradation: {
-    background:
-      'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
+    background: 'gradation',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
   },
   borderGradation: {
-    background:
-      'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
+    background: 'gradation',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     border: '1px solid #fff',
-    borderImage:
-      'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
+    borderImage: 'gradation',
     borderImageSlice: '1',
   },
   rainbowCircle: {
@@ -148,10 +142,6 @@ const textStyles = {
     opacity: '1',
     transition: 'opacity 0.2s',
     textShadow: '0 0 8px #fff',
-    // padding: {
-    //   base: '24px 0',
-    //   lg: '0',
-    // },
     '&:hover': {
       opacity: 0.4,
       cursor: 'pointer',
@@ -164,8 +154,7 @@ const textStyles = {
       },
       width: '100%',
       height: '2px',
-      background:
-        'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 54.69%, #FCB6BE 100%)',
+      background: 'gradation',
       opacity: '0.3',
       position: 'absolute',
       inset: 'auto 0 0 auto',
