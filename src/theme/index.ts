@@ -63,7 +63,8 @@ const textStyles = {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     border: '1px solid #fff',
-    borderImage: 'gradation',
+    borderImage:
+      'linear-gradient(90deg, #81D6EE 0%, #BCC5E3 55%, #FCB6BE 100%)',
     borderImageSlice: '1',
   },
   rainbowCircle: {
