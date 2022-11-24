@@ -53,6 +53,7 @@ const IndexService: FC = () => {
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             position: 'absolute',
+            pointerEvents: 'none',
             inset: {
               base: 'auto -2% -200px auto',
               xl: 'auto -5% -200px auto',
@@ -71,7 +72,7 @@ const IndexService: FC = () => {
               md: '720px',
             },
             boxShadow: {
-              md: '120px 64px 0 rgba(0, 0, 0, 0.015)',
+              md: '96px 64px 0 rgba(0, 0, 0, 0.015)',
             },
           }}
         >
@@ -114,7 +115,11 @@ const IndexService: FC = () => {
             結婚相談サービス
           </Text>
           <Text lineHeight="4.2rem">
-            サービスの説明文が入ります。この文章はタイトルです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーサービスの説明文が入ります。この文章はタイトルです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章は
+            愛する者同士が夫婦になる事で、心が軽くなり互いに生きやすくなる。そんな人を増やすために。{' '}
+            <br />
+            結婚相談所GLOWでは、IBJ(日本結婚相談所連盟)のシステムを使った婚活ができるよう、直談判いたしました。{' '}
+            <br />
+            IBJ加盟店で日本唯一のトランスジェンダー当事者の目線から、皆様をサポートします。
           </Text>
         </Box>
       </Flex>

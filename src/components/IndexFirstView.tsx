@@ -28,7 +28,9 @@ const IndexFirstView: FC = () => {
             sm: '5rem',
           }}
         >
-          テキストが入ります。
+          トランスジェンダー婚活を
+          <br />
+          成功させるならGLOW
         </Text>
         <OriginalSpacer size="8px" />
         <Text

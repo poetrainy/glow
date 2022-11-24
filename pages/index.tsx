@@ -10,17 +10,16 @@ import Contact from '../src/components/Contact';
 import IndexFaq from '../src/components/IndexFaq';
 import IndexAccess from '../src/components/IndexAccess';
 import Foot from '../src/components/Foot';
-import { client } from '../src/libs/client';
-import { faqType } from '../src/types/microCms';
 import HeadOgp from '../src/components/HeadOgp';
 import FadeIn from '../src/components/FadeIn';
 import React from 'react';
+import { useGetFaq } from '../src/libs/getFaq';
 
-type Props = {
-  indexFaqData: faqType[];
-};
+const Home: NextPage = () => {
+  const { getIndexFaq } = useGetFaq();
+  const faq = getIndexFaq();
 
-const Home: NextPage<Props> = ({ indexFaqData }) => {
+
   const components = [
     {
       component: <IndexService />,
@@ -43,7 +42,7 @@ const Home: NextPage<Props> = ({ indexFaqData }) => {
       size: 184,
     },
     {
-      component: <IndexFaq data={indexFaqData} />,
+      component: <IndexFaq data={faq} />,
       size: 184,
     },
     {
@@ -70,25 +69,3 @@ const Home: NextPage<Props> = ({ indexFaqData }) => {
 };
 
 export default Home;
-
-export const getStaticProps = async () => {
-  const microCMSData = await client.get({
-    endpoint: 'faq',
-    queries: {
-      offset: 0,
-      limit: 100,
-    },
-  });
-  const data = microCMSData.contents.reverse();
-  const indexFaq = [];
-
-  for (let i = 0; i < 3; i++) {
-    indexFaq.push(data[i]);
-  }
-
-  return {
-    props: {
-      indexFaqData: indexFaq,
-    },
-  };
-};

@@ -1,6 +1,19 @@
 import { createClient } from 'microcms-js-sdk';
 
+let serviceDomainData: string = '';
+let apiKeyData: string = '';
+
+if (
+  process.env.NEXT_PUBLIC_MICROCMS_API_URL !== undefined &&
+  process.env.NEXT_PUBLIC_MICROCMS_API_KEY !== undefined
+) {
+  serviceDomainData = process.env.NEXT_PUBLIC_MICROCMS_API_URL;
+  apiKeyData = process.env.NEXT_PUBLIC_MICROCMS_API_KEY;
+}
+
 export const client = createClient({
-  serviceDomain: process.env.MICROCMS_API_URL || '',
-  apiKey: process.env.MICROCMS_API_KEY || '',
+  serviceDomain: serviceDomainData,
+  apiKey: apiKeyData,
+  // serviceDomain: process.env.NEXT_PUBLIC_MICROCMS_API_URL || '',
+  // apiKey: process.env.NEXT_PUBLIC_MICROCMS_API_KEY || '',
 });

@@ -7,6 +7,7 @@ type Props = {
 };
 
 const Faq: FC<Props> = ({ data }) => {
+
   return (
     <Flex
       as="ul"

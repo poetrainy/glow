@@ -11,12 +11,11 @@ import { client } from '../src/libs/client';
 import { faqType } from '../src/types/microCms';
 import HeadOgp from '../src/components/HeadOgp';
 import { path } from '../src/libs/path';
+import { useGetFaq } from '../src/libs/getFaq';
 
-type Props = {
-  faqData: faqType[];
-};
-
-const Faq: NextPage<Props> = ({ faqData }) => {
+const Faq: NextPage = () => {
+  const { getAllFaq } = useGetFaq();
+  const faq = getAllFaq();
   return (
     <>
       <HeadOgp data={path[0]} />
@@ -25,7 +24,7 @@ const Faq: NextPage<Props> = ({ faqData }) => {
         <Navigation />
         <Heading data={indexContents[4]} />
         <OriginalSpacer size="120px" />
-        <FaqComponent data={faqData} />
+        <FaqComponent data={faq} />
         <OriginalSpacer size="184px" />
         <Contact />
         <Foot />
@@ -35,20 +34,3 @@ const Faq: NextPage<Props> = ({ faqData }) => {
 };
 
 export default Faq;
-
-export const getStaticProps = async () => {
-  const microCMSData = await client.get({
-    endpoint: 'faq',
-    queries: {
-      offset: 0,
-      limit: 100,
-    },
-  });
-  const data = microCMSData.contents.reverse();
-
-  return {
-    props: {
-      faqData: data,
-    },
-  };
-};
