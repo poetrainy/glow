@@ -18,9 +18,7 @@ const FadeIn: FC<Props> = ({ children, size }) => {
     show: {
       opacity: 1,
       transition: {
-        // staggerChildren: 0.1,
-        // delayChildren: 0.3,
-        duration: 0.2,
+        duration: 0.05,
       },
     },
   };

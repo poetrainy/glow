@@ -1,7 +1,6 @@
 import { Flex, Text } from '@chakra-ui/react';
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import Allow from './Allow';
-import { useWindowSize } from 'react-use';
 import OriginalSpacer from './OriginalSpacer';
 
 const IndexFirstView: FC = () => {
@@ -11,7 +10,10 @@ const IndexFirstView: FC = () => {
         flexDirection="column"
         w="100%"
         color="white"
-        bg="url(https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/3ee965d5d96d4ef69794c484e0c285db/fv.png?w=1600)"
+        bg={{
+          base: 'url(https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/3ee965d5d96d4ef69794c484e0c285db/fv.png?h=1000)',
+          sm: 'url(https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/3ee965d5d96d4ef69794c484e0c285db/fv.png?w=1600)',
+        }}
         bgRepeat="no-repeat"
         bgSize="cover"
         p="80px 5%"

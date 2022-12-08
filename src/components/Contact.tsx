@@ -22,7 +22,11 @@ const Navigation: FC = () => {
       minH="264px"
       mx="auto"
       color="white"
-      background="linear-gradient(90deg, rgba(129, 214, 238, 0.9) 0%, rgba(188, 197, 227, 0.9) 55%, rgba(252, 182, 190, 0.9) 100%), url('https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/68cd38c8e3b94fb0940bccdd3a0922e6/contact.jpeg?w=2000')"
+      background={{
+        base: "linear-gradient(90deg, rgba(129, 214, 238, 0.9) 0%, rgba(188, 197, 227, 0.9) 55%, rgba(252, 182, 190, 0.9) 100%), url('https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/68cd38c8e3b94fb0940bccdd3a0922e6/contact.jpeg?w=600')",
+        sm: "linear-gradient(90deg, rgba(129, 214, 238, 0.9) 0%, rgba(188, 197, 227, 0.9) 55%, rgba(252, 182, 190, 0.9) 100%), url('https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/68cd38c8e3b94fb0940bccdd3a0922e6/contact.jpeg?w=2000')",
+      }}
+      // background="linear-gradient(90deg, rgba(129, 214, 238, 0.9) 0%, rgba(188, 197, 227, 0.9) 55%, rgba(252, 182, 190, 0.9) 100%), url('https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/68cd38c8e3b94fb0940bccdd3a0922e6/contact.jpeg?w=2000')"
       backgroundRepeat="no-repeat, no-repeat"
       backgroundSize="cover, cover"
       backgroundPosition="center center, center center"

@@ -48,8 +48,9 @@ const IndexService: FC = () => {
               xl: '600px',
             },
             height: '320px',
-            background:
-              "url('https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/0b618942efa24b0ea4abc8087574a2e6/icon_service_2.png')",
+            background: {
+              base: "url('https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/0b618942efa24b0ea4abc8087574a2e6/icon_service_2.png?w=400')",
+            },
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             position: 'absolute',
@@ -78,7 +79,7 @@ const IndexService: FC = () => {
         >
           <Box
             as="img"
-            src="https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/2a82c36ea580471189d7af9dfb5de439/service.png?w=2000"
+            src="https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/2a82c36ea580471189d7af9dfb5de439/service.png?w=1000"
             alt="結婚"
             w="100%"
             h="100%"

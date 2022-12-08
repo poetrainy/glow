@@ -84,7 +84,7 @@ const IndexFlow: FC = () => {
               >
                 <Box
                   as="img"
-                  src={item.img}
+                  src={`${item.img}?w=600`}
                   w="100%"
                   h="100%"
                   objectFit="cover"
