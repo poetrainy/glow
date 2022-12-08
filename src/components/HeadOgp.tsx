@@ -9,8 +9,9 @@ type Props = {
 const title = '結婚相談所GLOW - トランスジェンダー専門結婚相談サービス';
 const description =
   'GLOWは大阪・天王寺にてトランスジェンダー専門の結婚相談サービスを行なっています。';
-const url = 'glow-marriage.com';
-const img = '';
+const url = 'gender-glow-marriage.com';
+const img =
+  'https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/3ee965d5d96d4ef69794c484e0c285db/fv.png?w=1600';
 
 const HeadOgp: FC<Props> = ({ data }) => {
   return (
