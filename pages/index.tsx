@@ -19,8 +19,11 @@ const Home: NextPage = () => {
   const { getIndexFaq } = useGetFaq();
   const faq = getIndexFaq();
 
-
   const components = [
+    {
+      component: <FirstView />,
+      size: 0,
+    },
     {
       component: <IndexService />,
       size: 184,
@@ -59,7 +62,6 @@ const Home: NextPage = () => {
       <HeadOgp />
       <OriginalSpacer size="80px" />
       <Navigation index />
-      <FirstView />
       {components.map((item, i) => (
         <FadeIn children={item.component} size={item.size} key={i} />
       ))}
