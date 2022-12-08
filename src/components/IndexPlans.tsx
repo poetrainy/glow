@@ -91,9 +91,6 @@ const IndexStrength: FC = () => {
       </Text>
       <OriginalSpacer size="64px" />
       <Link text="料金プランを詳しく見る" url="/plans" />
-      {/* <NextLink href="/plans" passHref>
-        <Link text="料金プランを詳しく見る" />
-      </NextLink> */}
     </Box>
   );
 };
