@@ -17,7 +17,6 @@ const Link: FC<Props> = ({ text, url }) => {
         gap="16px"
         w="fit-content"
         mx="auto"
-        transform="translateX(16px)"
         transition="gap 0.2s, transform 0.2s"
         fontSize="2.4rem"
         _hover={{
