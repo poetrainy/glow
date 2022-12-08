@@ -14,11 +14,11 @@ const FadeIn: FC<Props> = ({ children, size }) => {
   const variants = {
     hidden: {
       opacity: 0,
-      transition: 'opacity 0.2s',
+      // transition: 'opacity 0.2s',
     },
     show: {
       opacity: 1,
-      transition: 'opacity 0.2s',
+      // transition: 'opacity 0.2s',
     },
   };
 
