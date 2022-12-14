@@ -53,7 +53,15 @@ const IndexStrength: FC = () => {
               },
             }}
           >
-            <Box as="img" src={item.img} w="100%" h="200px" bg="gray" />
+            <Box w="100%" h="200px" bg="gray">
+              <Box
+                as="img"
+                src={item.img}
+                w="100%"
+                h="100%"
+                objectFit="cover"
+              />
+            </Box>
             <OriginalSpacer size="28px" />
             <Flex
               as="p"

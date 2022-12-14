@@ -41,10 +41,37 @@ const plansPage: NextPage = () => {
         <OriginalSpacer size="64px" />
         <Box w="100%" p="0 5%" overflow="scroll">
           <Box as="table" w="80vw" maxW="1000px" minW="800px" mx="auto">
+            {/* <Box
+              as="thead"
+              display="block"
+              w="100%"
+              color="white"
+              background="gradation"
+              fontSize="2rem"
+              fontWeight="bold"
+            >
+              <Box as="tr" height="56px">
+                {plansHead.map((item, i) => (
+                  <Box
+                    as="td"
+                    key={item + i}
+                    textAlign="center"
+                    sx={{
+                      ...(i === 0
+                        ? { width: '22%', fontWeight: 'bold' }
+                        : { width: '26%' }),
+                    }}
+                  >
+                    {item}
+                  </Box>
+                ))}
+              </Box>
+            </Box> */}
             <Box as="tbody">
               {plans.map((item: string[], i: number) => (
-                <Box
+                <Flex
                   as="tr"
+                  height="72px"
                   key={i}
                   sx={{
                     ...(i === 0
@@ -56,15 +83,16 @@ const plansPage: NextPage = () => {
                           fontWeight: 'bold',
                         }
                       : { height: '72px' }),
-                    ...(i !== 0 && i % 2 === 0
-                      ? { background: '#F7FAFC' }
-                      : {}),
+                    ...(i !== 0 && i % 2 === 0 && { background: '#F7FAFC' }), // ...(i % 2 === 0
                   }}
                 >
                   {item.map((td: string, i2: number) => (
-                    <Box
+                    <Flex
                       as="td"
                       key={i2}
+                      justifyContent="center"
+                      alignItems="center"
+                      h="100%"
                       textAlign="center"
                       sx={{
                         ...(i2 === 0
@@ -73,9 +101,9 @@ const plansPage: NextPage = () => {
                       }}
                     >
                       {td}
-                    </Box>
+                    </Flex>
                   ))}
-                </Box>
+                </Flex>
               ))}
             </Box>
           </Box>
