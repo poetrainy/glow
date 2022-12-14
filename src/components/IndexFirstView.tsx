@@ -12,7 +12,7 @@ const IndexFirstView: FC = () => {
         color="white"
         bg={{
           base: 'url(https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/3ee965d5d96d4ef69794c484e0c285db/fv.png?h=1000)',
-          sm: 'url(https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/3ee965d5d96d4ef69794c484e0c285db/fv.png?w=1600)',
+          sm: 'url(https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/3ee965d5d96d4ef69794c484e0c285db/fv.png?w=2000)',
         }}
         bgRepeat="no-repeat"
         bgSize="cover"
