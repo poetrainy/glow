@@ -12,7 +12,7 @@ export const flow: strengthType[] = [
   },
   {
     title: 'お相手探し',
-    text: 'ちょっとしたスキマ時間を利用し、あなたが幸せになれる理想のパートナー選びをスマホやパソコンで行いましょう。GLOWでは、お見合いの申し込み人数に制限を設けておりません。',
+    text: 'ちょっとしたスキマ時間を利用し、あなたが幸せになれる理想のパートナー選びをスマホやパソコンで行いましょう。お見合いの申し込み人数は、各プランにより制限があります。',
     img: 'https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/ef682e0f866344a7a5707f6d13c98bf7/flow-03.jpg',
   },
   {

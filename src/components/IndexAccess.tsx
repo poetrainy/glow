@@ -4,7 +4,7 @@ import contents from '../libs/contents';
 import Heading from './Heading';
 import OriginalSpacer from './OriginalSpacer';
 
-const IndexService: FC = () => {
+const IndexAccess: FC = () => {
   return (
     <Box
       as="section"
@@ -90,4 +90,4 @@ const IndexService: FC = () => {
   );
 };
 
-export default IndexService;
+export default IndexAccess;

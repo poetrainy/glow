@@ -8,7 +8,7 @@ import Link from './Link';
 import PlanCardCopy from './PlanCardCopy';
 import PlanCardHeading from './PlanCardHeading';
 
-const IndexStrength: FC = () => {
+const IndexPlans: FC = () => {
   return (
     <Box as="section">
       <Heading data={contents[3]} />
@@ -95,4 +95,4 @@ const IndexStrength: FC = () => {
   );
 };
 
-export default IndexStrength;
+export default IndexPlans;

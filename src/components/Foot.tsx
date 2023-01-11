@@ -2,6 +2,7 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import React from 'react';
 import Infomation from '../components/Infomation';
+import Logo from './Logo';
 
 const Foot: FC = () => {
   return (
@@ -13,7 +14,7 @@ const Foot: FC = () => {
       w="100%"
       h="344px"
     >
-      <Text>Logo</Text>
+      <Logo />
       <Infomation />
       <Text as="small" fontSize="1.2rem">
         Copyright &copy; 2022 結婚相談所 GLOW All Rights Reserved.

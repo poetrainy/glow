@@ -7,8 +7,6 @@ import Heading from '../src/components/Heading';
 import Contact from '../src/components/Contact';
 import FaqComponent from '../src/components/Faq';
 import indexContents from '../src/libs/contents';
-import { client } from '../src/libs/client';
-import { faqType } from '../src/types/microCms';
 import HeadOgp from '../src/components/HeadOgp';
 import { path } from '../src/libs/path';
 import { useGetFaq } from '../src/libs/getFaq';

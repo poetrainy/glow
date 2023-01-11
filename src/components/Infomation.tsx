@@ -8,16 +8,16 @@ const sns: {
   icon: (props: any) => JSX.Element;
 }[] = [
   {
-    url: 'https://www.instagram.com/glow.shikada11.22/',
+    url: 'https://twitter.com/GLOW_shikada',
     icon: tw,
   },
   {
-    url: 'https://twitter.com/GLOW_shikada',
+    url: 'https://www.instagram.com/glow.shikada11.22/',
     icon: ig,
   },
 ];
 
-const Allow: FC = () => {
+const Infomation: FC = () => {
   return (
     <Flex
       justifyContent="center"
@@ -44,4 +44,4 @@ const Allow: FC = () => {
   );
 };
 
-export default Allow;
+export default Infomation;

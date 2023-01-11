@@ -1,7 +1,7 @@
 import { Flex, Text } from '@chakra-ui/react';
 import { FC, useRef } from 'react';
 
-const Navigation: FC = () => {
+const Contact: FC = () => {
   const refContactLink = useRef<HTMLDivElement | null>(null);
   const clickTelBtn = () => {
     if (window !== undefined) {
@@ -215,4 +215,4 @@ const Navigation: FC = () => {
   );
 };
 
-export default Navigation;
+export default Contact;

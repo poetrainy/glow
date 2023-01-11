@@ -10,6 +10,7 @@ import { Link as Scroll } from 'react-scroll';
 import { useMediaQuery } from '@chakra-ui/react';
 import Infomation from '../components/Infomation';
 import OriginalSpacer from './OriginalSpacer';
+import Logo from './Logo';
 
 type Props = {
   index?: boolean;
@@ -66,7 +67,7 @@ const Navigation: FC<Props> = ({ index }) => {
               cursor: 'pointer',
             }}
           >
-            GLOW
+            <Logo />
           </Text>
         </NextLink>
       </Box>
