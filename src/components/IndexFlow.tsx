@@ -1,14 +1,13 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Text, useMediaQuery } from '@chakra-ui/react';
 import { FC } from 'react';
 import contents from '../libs/contents';
 import { flow } from '../libs/flow';
 import Allow from './Allow';
 import Heading from './Heading';
 import OriginalSpacer from './OriginalSpacer';
-import { useWindowSize } from 'react-use';
 
 const IndexFlow: FC = () => {
-  const { width, height } = useWindowSize();
+  const [isLargerThan640] = useMediaQuery('(min-width:640px)');
 
   return (
     <Box
@@ -50,7 +49,17 @@ const IndexFlow: FC = () => {
               },
             }}
           >
-            <Box w="calc(100% - 56px)">
+            <Box
+              sx={{
+                ...(isLargerThan640
+                  ? {
+                      width: 'calc(100% - 56px)',
+                    }
+                  : {
+                      width: 'calc(100% - 28px)',
+                    }),
+              }}
+            >
               <Flex
                 justifyContent="center"
                 alignItems="center"
@@ -104,7 +113,7 @@ const IndexFlow: FC = () => {
                 {item.text}
               </Text>
             </Box>
-            {i === 6 ? '' : <Allow />}
+            {i !== 6 && isLargerThan640 && <Allow />}
           </Flex>
         ))}
       </Flex>

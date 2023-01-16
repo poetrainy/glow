@@ -39,7 +39,7 @@ const plansPage: NextPage = () => {
           プラン詳細
         </Text>
         <OriginalSpacer size="64px" />
-        <Box w="100%" p="0 5%" overflow="scroll">
+        <Box w="100%" p="0 5%" overflowX="auto" overflowY="hidden">
           <Box as="table" w="80vw" maxW="1000px" minW="800px" mx="auto">
             <Box as="tbody">
               {plans.map((item: string[], i: number) => (

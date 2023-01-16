@@ -62,7 +62,8 @@ const Contact: FC = () => {
         },
         padding: {
           base: '32px 0',
-          md: '24px 80px',
+          md: '24px 5vw',
+          '3xl': '24px 12vw',
         },
       }}
     >

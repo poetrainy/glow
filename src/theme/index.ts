@@ -46,6 +46,7 @@ const breakpoints = {
   lg: '1000px',
   xl: '1120px',
   '2xl': '1120px',
+  '3xl': '1200px',
 };
 const textStyles = {
   sectionWidth: {

@@ -17,6 +17,7 @@ type Props = {
 };
 
 const Navigation: FC<Props> = ({ index }) => {
+  const [isLargerThan640] = useMediaQuery('(min-width:640px)');
   const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)');
   const [isSmailerThan1000] = useMediaQuery('(max-width: 999px)');
   const [navDomFlag, setNavDomFlag] = useState<boolean>(false);
@@ -76,7 +77,7 @@ const Navigation: FC<Props> = ({ index }) => {
         alignItems="center"
         sx={{
           gap: {
-            base: '16px',
+            base: '8px',
             xl: '40px',
           },
         }}
@@ -246,7 +247,7 @@ const Navigation: FC<Props> = ({ index }) => {
           }}
           sx={{
             width: {
-              base: '216px',
+              base: '168px',
               sm: '240px',
             },
             fontSize: {
@@ -259,7 +260,11 @@ const Navigation: FC<Props> = ({ index }) => {
             },
           }}
         >
-          無料カウンセリング予約
+          {isLargerThan640 ? (
+            <>無料カウンセリング予約</>
+          ) : (
+            <>無料カウンセリング</>
+          )}
         </Flex>
       </Flex>
     </Flex>
