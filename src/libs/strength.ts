@@ -2,7 +2,7 @@ import { strengthType } from './../types/strength';
 export const strength: strengthType[] = [
   {
     title: '担当者がトランスジェンダー当事者',
-    text: '婚活の相談だけでなく、性転換に関するお悩みまで幅広く対応。結婚13年目（2022年）の当事者ならではの目線で、成婚までのお手伝いをいたします。',
+    text: '婚活の相談だけでなく、性別適合手術に関するお悩みまで幅広く対応。結婚13年目（2022年）の当事者ならではの目線で、成婚までのお手伝いをいたします。',
     img: 'https://images.microcms-assets.io/assets/91ccec7b6d554ddcaee759c5cdf7b840/ad85bea2ad2a413bb61afc4e134a7d34/strength-01.png',
   },
   {
